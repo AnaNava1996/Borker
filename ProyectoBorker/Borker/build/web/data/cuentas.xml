@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><class xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cuentas.xsd">
+    <cuenta name="default" type="-">0</cuenta>
+<cuenta name="Caja" type="Activos circulantes">{"nombre":"Caja","tipo":"Activos circulantes","movs":["1000","090909090"]}</cuenta><cuenta name="Terreno" type="Activos fijos">{"nombre":"Terreno","tipo":"Activos fijos","movs":["4000"]}</cuenta></class>

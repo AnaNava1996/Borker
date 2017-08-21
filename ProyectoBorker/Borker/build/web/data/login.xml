@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<class
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="login.xsd">
+
+<usuario>
+<nombre>Administrador</nombre>
+<tipo>Admin</tipo>
+<password>bobesponja</password>
+</usuario>
+
+<usuario>
+<nombre>Caja</nombre>
+<tipo>Empleado</tipo>
+<password>bobesponja</password>
+</usuario>
+
+</class>

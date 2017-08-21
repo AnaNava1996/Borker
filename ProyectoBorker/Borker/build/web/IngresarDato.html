@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="cache-control" content="no-cache" />
+    <link rel="stylesheet" type="text/css" href="StyleSheet2.css">
+    <script src="JS/jquery-3.2.1.js"></script>
+    <script src="JS/control.js"></script>
+    <script src="JS/objects.js"></script>
+</head>
+<body>
+    <h1>Ingresar Dato</h1>
+    <br />
+    <h2 id="plipli"><a href="HtmlPage1.html">Inicio</a></h2>
+    <br />
+    <div class="containerC">
+        <div style="display:inline-block; width:200px;left:0px;">
+            <h2>Cuenta</h2>
+            <input type="text" list="mcuentas" id="tcuenta"/>
+            <h2>Cantidad</h2>
+            <input type="text" id="tcantidad"/>
+            <h2>Tipo</h2>
+            <input list="tipodecuenta" name="cuentas" id="tycuenta">
+            <datalist id="tipodecuenta">
+                <option value="Activos circulantes">
+                <option value="Activos fijos">
+                <option value="Activos diferidos">
+                <option value="Pasivos a corto plazo">
+                <option value="Pasivos a largo plazo">
+                <option value="Capital contable">
+            </datalist>
+            <datalist id="mcuentas">
+            </datalist>
+	    <p id="alerta" style="color:red;font-size:11px;"></p>
+            <button id="butt" onclick="setCuenta()">Registrar</button>
+        </div>
+        <div id="data">
+	  <br/>
+	  <div id="inside"><br/></div>
+	  <br/><br/>
+	  <button onclick="clearAll()" class="controller">Limpiar</button>
+	  <button onclick="sendData()" class="controller">Guardar</button>
+	</div>
+    </div>
+</body>
+</html>

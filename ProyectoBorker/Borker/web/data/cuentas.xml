@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cuentas.xsd">
+    <cuenta name="default" type="-">0</cuenta>
+</class>
+

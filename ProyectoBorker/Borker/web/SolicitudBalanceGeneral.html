@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="StyleSheet2.css">
+    <script src="JS/jquery-3.2.1.js"></script>
+    <script src="JS/control.js"></script>
+    <style>
+        div.containerC {
+            width: 70%;
+            margin: auto;
+            padding: 20px;
+            left: 30px;
+            border: 7px solid black;
+            border-radius: 30px;
+            background-color: white;
+            overflow:auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Solicitar Balance General</h1>
+    <br />
+    <h2 id="plipli"><a href="HtmlPage1.html">Inicio</a></h2>
+    <h2><a href="InfoBalance.html">Info</a></h2>
+    <br />
+    <div class="containerC">
+        <h2>Día   /   Mes   /   Año</h2>
+        <input list="dias" name="dia">
+        <datalist id="dias">
+            <option value="00">
+            <option value="01">
+            <option value="02">
+            <option value="03">
+            <option value="04">
+            <option value="05">
+            <option value="06">
+            <option value="07">
+            <option value="08">
+            <option value="09">
+            <option value="10">
+            <option value="11">
+            <option value="12">
+            <option value="13">
+            <option value="14">
+            <option value="15">
+            <option value="16">
+            <option value="17">
+            <option value="18">
+            <option value="19">
+            <option value="20">
+            <option value="21">
+            <option value="22">
+            <option value="23">
+            <option value="24">
+            <option value="25">
+            <option value="26">
+            <option value="27">
+            <option value="28">
+            <option value="29">
+            <option value="30">
+            <option value="31">
+        </datalist>
+        <input list="meses" name="mes">
+        <datalist id="meses">
+            <option value="00">
+            <option value="01">
+            <option value="02">
+            <option value="03">
+            <option value="04">
+            <option value="05">
+            <option value="06">
+            <option value="07">
+            <option value="08">
+            <option value="09">
+            <option value="10">
+            <option value="11">
+            <option value="12">
+        </datalist>
+        <input list="años" name="año">
+        <datalist id="años">
+            <option value="2000">
+            <option value="2001">
+            <option value="2002">
+            <option value="2003">
+            <option value="2004">
+            <option value="2005">
+            <option value="2006">
+            <option value="2007">
+            <option value="2008">
+            <option value="2009">
+            <option value="2010">
+            <option value="2011">
+            <option value="2012">
+            <option value="2013">
+            <option value="2014">
+            <option value="2015">
+            <option value="2016">
+            <option value="2017">
+        </datalist>
+
+
+        <button onclick="getToShow()">Guardar</button>
+    </div>
+</body>
+</html>
