@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-animate-left w3-card" style="display:none" id="mySidebar">
+  <h3 href="#" class="w3-bar-item">Mis cursos</h3>
+  <a href="PuntoE.html" class="w3-bar-item w3-button">Punto de Equilibrio</a>
+  <a href="#" class="w3-bar-item w3-button">Balance General</a>
+  <a href="#" class="w3-bar-item w3-button">Estado de Resultados</a>
+  <button class="w3-bar-item w3-button"
+  onclick="w3_close()">Cerrar &times;</button>
+</div>
+
+<div zclass="w3-main" id="main">
+
+<div class="w3-black">
+  <button class="w3-button w3-black w3-xlarge" onclick="w3_open()">&#9776;</button>
+  <div class="w3-container">
+    <h1>BORKER</h1>
+  </div>
+</div>
+
+<img src="edificios3.jpg" alt="Finanzas" style="width:100%">
+
+</div>
+
+<script>
+function w3_open() {
+  document.getElementById("main").style.marginLeft = "25%";
+  document.getElementById("mySidebar").style.width = "25%";
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("openNav").style.display = 'none';
+}
+function w3_close() {
+  document.getElementById("main").style.marginLeft = "0%";
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("openNav").style.display = "inline-block";
+}
+</script>
+
+</body>
+</html>
