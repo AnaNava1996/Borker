@@ -5,40 +5,60 @@
 <link rel="stylesheet" href="w3.css">
 <body>
 
-<div class="w3-sidebar w3-bar-block w3-animate-left w3-card" style="display:none" id="mySidebar">
-  <h3 href="#" class="w3-bar-item">Mis cursos</h3>
+<div class="w3-sidebar w3-bar-block w3-animate-left w3-card w3-light-gray" style="display:none" id="mySidebar">
+  </br>
+  <button class="w3-bar-item w3-button" onclick="w3_quienesSomos()">¿Quiénes somos?</button>
+  <h3 href="#" class="w3-bar-item">Cursos:</h3>
   <a href="PuntoE.html" class="w3-bar-item w3-button">Punto de Equilibrio</a>
-  <a href="#" class="w3-bar-item w3-button">Balance General</a>
-  <a href="#" class="w3-bar-item w3-button">Estado de Resultados</a>
-  <button class="w3-bar-item w3-button"
-  onclick="w3_close()">Cerrar &times;</button>
+  <a href="balanceG.html" class="w3-bar-item w3-button">Balance General</a>
+  <a href="EstadoR.html" class="w3-bar-item w3-button">Estado de Resultados</a>
 </div>
 
 <div zclass="w3-main" id="main">
-
 <div class="w3-black">
-  <button class="w3-button w3-black w3-xlarge" onclick="w3_open()">&#9776;</button>
+  <button class="w3-button w3-black w3-xlarge" onclick="w3_openClose()" id="menucito">&#9776;</button>
   <div class="w3-container">
     <h1>BORKER</h1>
+  </div>
+  <div class="w3-container w3-card-4 w3-animate-top" style="display:none" id="carta">
+    <header class="w3-container w3-grey"><h1>¿Quienes somos?</h1></header>
+    <div class="w3-container w3-light-grey">
+      <p>Borker es un proyecto que nació con la finalidad de apoyar a estudiantes y publico en general que desee aprender
+      los conceptos básicos de finanzas, brindándoles material gratuito a través de la web.
+    La iniciativa nació por parte de un grupo de estudiantes del Instituo Politécnico Nacional (IPN), pertenecientes a
+    la Escuela Superior de Cómputo (ESCOM)</p>
+    </div>
   </div>
 </div>
 
 <img src="edificios3.jpg" alt="Finanzas" style="width:100%">
-
 </div>
 
 <script>
-function w3_open() {
+var b = false;
+function w3_openClose(){
+  if(b == false){
+  b = true;
+  var element = document.getElementById("menucito");
+  element.innerHTML = "&#9746;";
   document.getElementById("main").style.marginLeft = "25%";
   document.getElementById("mySidebar").style.width = "25%";
   document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("openNav").style.display = 'none';
+  document.getElementById("openNav").style.display = 'none';}
+  else{
+    b = false;
+    var element = document.getElementById("menucito");
+    element.innerHTML = "&#9776;";
+    document.getElementById("main").style.marginLeft = "0%";
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("openNav").style.display = "inline-block";
+  }
 }
-function w3_close() {
-  document.getElementById("main").style.marginLeft = "0%";
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("openNav").style.display = "inline-block";
+
+function w3_quienesSomos(){
+  document.getElementById("carta").style.display = "inline-block";
 }
+
 </script>
 
 </body>

@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+<title>Estado R</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="w3-colors-win8.css">
+<body>
+
+<!--MENU-->
+<div class="w3-sidebar w3-bar-block  w3-black w3-animate-left w3-card" style="display:none" id="mySidebar">
+  <br/>
+  <a href="index.html" class="w3-bar-item w3-button">&#9754; Inicio</a>
+  <br/>
+  <buttom class="w3-bar-item w3-button" onclick="definicionE()">¿Qué es el Estado de resultados?</buttom>
+  <buttom class="w3-bar-item w3-button" onclick="Calcular()">Empezar :)</buttom>
+  <p></p>
+  <h3 href="#" class="w3-bar-item">Otros cursos:</h3>
+  <a href="balanceG.html" class="w3-bar-item w3-button">Balance General</a>
+  <a href="PuntoE.html" class="w3-bar-item w3-button">Punto de Equilibrio</a>
+</div>
+
+<!--main, aqui esta el background-->
+<div zclass="w3-main" id="main">
+<!--Título y boton para abrir el menu-->
+<div>
+  <button class="w3-button w3-black w3-xlarge" onclick="w3_openClose()" id='menucito'>&#9776;</button>
+  <div class="w3-container">
+    <h1>ESTADO DE RESULTADOS</h1>
+  </div>
+</div>
+
+<!--CARTA EXPLICATIVA DEFINICION-->
+<div class="w3-container w3-card-4 w3-animate-top" style="display:none" id="definicionE"><!--CARD ACTIVOS-->
+  <header class="w3-container w3-grey"><h1>¿Qué es el estado de resultados?</h1></header>
+  <div class="w3-container w3-light-grey">
+  </br>
+    <p>El estado de resultados, también conocido como estado de ganancias y pérdidas es un reporte financiero que en
+    base a un periodo determinado muestra de manera detallada los ingresos obtenidos, los gastos en el momento en
+    que se producen y como consecuencia, el beneficio o pérdida que ha generado la empresa en dicho periodo de tiempo
+    para analizar esta información y en base a esto, tomar decisiones de negocio.</p>
+    <p>Este estado financiero te brinda una visión panorámica de cuál ha sido el comportamiento de la empresa,
+      si ha generado utilidades o no. En términos sencillos es un reporte es muy útil para ti como empresario
+      ya que te ayuda a saber si tu compañía está vendiendo, qué cantidad está vendiendo, cómo se están administrando
+      los gastos y al saber esto, podrás saber con certeza si estás generando utilidades. </p>
+  </div>
+</div>
+
+<!--ALERTA PARA EL ESTADO DE RESULTADOS-->
+<div class="w3-panel w3-blue w3-display-container w3-animate-top" style="display:none; position:fixed; z-index:10; top:0px;" id="alertaEstado">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-blue w3-large w3-display-topright">&times;</span>
+  <h3><pre>   ¿VES LOS ESPACIOS DE COLOR GRIS LIGERAMENTE MÁS OSCURO?           </pre></h3>
+  <p>Lo que debes hacer es sencillo, llena la información de gris claro ya que la de gris oscuro se autocompletará</p>
+</div>
+
+<!--SEGUNDA ALERTA PARA EL ESTADO DE RESULTADOS-->
+<div class="w3-panel w3-win8-amber w3-display-container w3-animate-top" style="display:none; position:fixed; z-index:10; top:0px;" id="alertaEstado2">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-win8-amber w3-large w3-display-topright">&times;</span>
+  <h3><pre>   ¿NO CONOCES LOS CONCEPTOS?                                        </pre></h3>
+  <p>Presiona los botones como estos <button class="w3-button w3-teal w3-border-white w3-large">&#63;</button>
+    y podrás leer la definicion de cada cuenta</p>
+</div>
+
+<!-- ALERTA INGRESOS POR ACTIVIDADES / VENTAS-->
+<div class="w3-panel w3-teal w3-display-container" style="display:none; position:fixed; z-index:10;" id="ia">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-teal w3-large w3-display-topright">&times;</span>
+  <h3>INGRESOS POR ACTIVIDADES / VENTAS</h3>
+<p> primer dato de cualquier estado de resultados.
+  Se refiere a los ingresos totales percibidos por las ventas realizadas en ese período concreto.</p>
+</div>
+
+<!-- ALERTA DESCUENTOS Y BONIFICACIONES / COSTO DE VENTAS-->
+<div class="w3-panel w3-teal w3-display-container" style="display:none; position:fixed; z-index:10;" id="db">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-teal w3-large w3-display-topright">&times;</span>
+  <h3>DESCUENTOS Y BONIFICACIONES / COSTO DE VENTAS</h3>
+<p> ¿cuánto le costó a la empresa el artículo que vende?
+  En las empresas con un gran número de elementos que fluyen a través,
+  el costo de ventas o costo de los bienes vendidos a menudo se calcula mediante esta fórmula:</p>
+  <p>Costo de Ventas = Inventario al comienzo del periodo + Compras y gastos durante
+  el periodo - Inventario al Final del Periodo.</p>
+</div>
+
+<!-- INGRESOS OPERATIVOS NETOS-->
+<div class="w3-panel w3-teal w3-display-container" style="display:none; position:fixed; z-index:10;" id="ion">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-teal w3-large w3-display-topright">&times;</span>
+  <h3>INGRESOS OPERATIVOS NETOS / UTILIDAD BRUTA</h3>
+<p>diferencia entre ventas y coste de ventas, indicando qué gana la empresa, en bruto, con el producto vendido.</p>
+</div>
+
+<!--COSTO DE LOS BIENES VENDIDOS O DE LOS SERVICIOS PRESTADOS-->
+<div class="w3-panel w3-teal w3-display-container" style="display:none; position:fixed; z-index:10;" id="cbvsp">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-teal w3-large w3-display-topright">&times;</span>
+  <h3>COSTO DE LOS BIENES VENDIDOS O DE LOS SERVICIOS PRESTADOS / GASTOS DE OPERACIÓN</h3>
+<p>gastos involucrados directamente en el funcionamiento de la empresa (luz, agua, salarios, etc.).</p>
+</div>
+
+<!--RESULTADO BRUTO-->
+<div class="w3-panel w3-teal w3-display-container" style="display:none; position:fixed; z-index:10;" id="rb">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-teal w3-large w3-display-topright">&times;</span>
+  <h3>RESULTADO BRUTO</h3>
+  <p>El estado de resultados incluye en primer lugar el total de ingresos provenientes de las
+     actividades principales del ente y el costo incurrido para lograrlos. La diferencia entre
+      ambas cifras indica el resultado bruto o margen bruto sobre ventas que constituye un indicador
+      clásico de la información contable. Habitualmente se calcula el resultado bruto como porcentaje
+      de las ventas, lo que indica el margen de rentabilidad bruta con que operó la compañía al vender sus productos. </p>
+</div>
+
+<!--GASTO DE VENTAS-->
+<div class="w3-panel w3-teal w3-display-container" style="display:none; position:fixed; z-index:10;" id="gv">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-teal w3-large w3-display-topright">&times;</span>
+  <h3>GASTO DE VENTAS</h3>
+  <p>Gasto asociado a la gestión comercial, como descuentos, comisiones, publicidad o promoción.</p>
+  <p>Son los relacionados con la preparación y almacenamiento de los artículos para la Venta, la
+    promoción de ventas, los Gastos en que se incurre al realizar las ventas y, si no se tiene un
+    departamento de reparto, también los Gastos por este concepto.</p>
+</div>
+
+<!--GASTO DE ADMINISTRACION-->
+<div class="w3-panel w3-teal w3-display-container" style="display:none; position:fixed; z-index:10;" id="ga">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-teal w3-large w3-display-topright">&times;</span>
+  <h3>GASTO DE ADMINISTRACIÓN</h3>
+  <p>Se denominan gastos de administración a aquellos contraidos en el control y la dirección de una organización,
+    pero no directamente identificables con la financiación, la comercialización, o las operaciones de producción.</p>
+  <p>Los salarios de los altos ejecutivos y los costes de los servicios generales (tales como contabilidad,
+    contratación y relaciones laborales) se incluyen en esta rúbrica.</p>
+  <p>Los gastos de administración se relacionan por tanto con la organización
+    en su conjunto, frente a los gastos relacionados con los distintos departamentos.</p>
+</div>
+
+<!--RESULTADO DE LAS OPERACIONES ORDINARIAS-->
+<div class="w3-panel w3-teal w3-display-container" style="display:none; position:fixed; z-index:10;" id="roo">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-teal w3-large w3-display-topright">&times;</span>
+  <h3>RESULTADO DE LAS OPERACIONES ORDINARIAS</h3>
+  <p>Se denominan gastos de administración a aquellos contraidos en el control y la dirección de una organización,
+    pero no directamente identificables con la financiación, la comercialización, o las operaciones de producción.</p>
+  <p>Los salarios de los altos ejecutivos y los costes de los servicios generales (tales como contabilidad,
+    contratación y relaciones laborales) se incluyen en esta rúbrica.</p>
+  <p>Los gastos de administración se relacionan por tanto con la organización
+    en su conjunto, frente a los gastos relacionados con los distintos departamentos.</p>
+</div>
+
+<!--INGRESOS FINANCIEROS-->
+<div class="w3-panel w3-teal w3-display-container" style="display:none; position:fixed; z-index:10;" id="if">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-teal w3-large w3-display-topright">&times;</span>
+  <h3>INGRESOS FINANCIEROS</h3>
+  <p>Recogen todos aquellos ingresos derivados de operaciones financieras.</p>
+  <p>El ejemplo más típico es una inversión financiera realizada para colocar un excedente de tesorería,
+    pero pueden existir otros como, préstamos a socios o inversiones en otras empresas (cartera).</p>
+</div>
+
+<!--GASTOS FINANCIEROS-->
+<div class="w3-panel w3-teal w3-display-container" style="display:none; position:fixed; z-index:10;" id="gf">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-teal w3-large w3-display-topright">&times;</span>
+  <h3>GASTOS FINANCIEROS</h3>
+  <p>Los gastos financieros forman parte de la partida de gastos deducibles de la actividad económica,
+    tanto del autónomo como de las sociedades. Se entiende como gastos financieros todos aquellos en
+     los que incurre una empresa como consecuencia del uso de capitales puestos a su disposición por
+      terceras personas.</p>
+  <p>Toda empresa que acuda a la financiación ajena, tanto si es prestada por entidades bancarias
+    como por personas físicas u otras empresas, tendrá estas partidas en sus resultados.</p>
+  <p>Los gastos financieros más frecuentes son las comisiones y los intereses. Las comisiones
+    suelen originarse en operaciones con bancos o entidades de crédito. Existen comisiones de
+    mantenimiento de cuentas, de tarjetas, de apertura y cancelación de préstamos…. Esos importes
+    son deducibles en su totalidad y se justifican con el contrato en el que se establecen o el extracto
+    bancario en el que se detallan.</p>
+  <p>Los intereses suelen originarse en los préstamos. Todo préstamo contempla un cuadro de amortización
+    en forma de cuotas. En cada cuota existe una parte que se corresponde con la devolución del principal
+    prestado y otra que recoge los intereses pactados en la solicitud de financiación. La devolución del
+    capital no constituye un gasto para la empresa. Es tan solo un movimiento de dinero. La parte que corresponde
+    a intereses sí es deducible.</p>
+</div>
+
+<!--INGRESOS EXTRAORDINARIOS-->
+<div class="w3-panel w3-teal w3-display-container" style="display:none; position:fixed; z-index:10;" id="ie">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-teal w3-large w3-display-topright">&times;</span>
+  <h3>INGRESOS EXTRAORDINARIOS</h3>
+  <p>Proceden de actividades ajenas a las habituales que realiza la empresa.</p>
+  <p>Las operaciones más habituales son las ventas de activos, como por ejemplo edificios,
+    elementos de transporte, ordenadores, etc. Lógicamente cuando nos referimos a empresas que
+    no se dedican a la venta de ninguno de estos bienes.</p>
+</div>
+
+<!--GASTOS EXTRAORDINARIOS-->
+<div class="w3-panel w3-teal w3-display-container" style="display:none; position:fixed; z-index:10;" id="ge">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-teal w3-large w3-display-topright">&times;</span>
+  <h3>GASTOS EXTRAORDINARIOS</h3>
+  <p>Gastos que tiene una empresa, de carácter no periódico, que espera no vuelvan a
+    ocurrir en un futuro y que no se derivan de sus actividades ordinarias. Por ejemplo,
+    incendios, multas, expropiación de un activo por parte del Gobierno, etc.</p>
+</div>
+
+<!--INGRESOS DE EJERCICIOS ANTERIORES-->
+<div class="w3-panel w3-teal w3-display-container" style="display:none; position:fixed; z-index:10;" id="iea">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-teal w3-large w3-display-topright">&times;</span>
+  <h3>INGRESOS DE EJERCICIOS ANTERIORES</h3>
+  <p>Tiempo después de que se cerró un ejercicio, aun se ven ganancias de tiempo atrás.</p>
+</div>
+
+<!--GASTOS DE EJERCICIOS ANTERIORES-->
+<div class="w3-panel w3-teal w3-display-container" style="display:none; position:fixed; z-index:10;" id="gea">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-teal w3-large w3-display-topright">&times;</span>
+  <h3>GASTOS DE EJERCICIOS ANTERIORES</h3>
+  <p>Tiempo después de que se cerró un ejercicio, aun se ven gastos de tiempo atrás.</p>
+</div>
+
+<!--RESULTADO ANTES DE IMPUESTO A LAS GANANCIAS-->
+<div class="w3-panel w3-teal w3-display-container" style="display:none; position:fixed; z-index:10;" id="raig">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-teal w3-large w3-display-topright">&times;</span>
+  <h3>RESULTADO ANTES DE IMPUESTO A LAS GANANCIAS</h3>
+  <p>es un indicador del resultado de explotación de una empresa sin tener en cuenta los intereses
+    y costes financieros, que dependen de la forma en que está financiada la empresa y los tipos de
+    interés y sin tener en cuenta el impuesto sobre sociedades que puede variar entre distintos países.</p>
+</div>
+
+<!--IMPUESTO A LAS GANANCIAS-->
+<div class="w3-panel w3-teal w3-display-container" style="display:none; position:fixed; z-index:10;" id="ig">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-teal w3-large w3-display-topright">&times;</span>
+  <h3>IMPUESTO A LAS GANANCIAS</h3>
+  <p>El impuesto a las ganancias o sobre la renta es un tributo que se aplica sobre los
+    ingresos percibidos por personas, empresas o cualquier entidad legal como medio de recaudación estatal.</p>
+</div>
+
+<!--RESULTADO NETO-->
+<div class="w3-panel w3-teal w3-display-container" style="display:none; position:fixed; z-index:10;" id="rn">
+  <span onclick="this.parentElement.style.display='none'"
+  class="w3-button w3-teal w3-large w3-display-topright">&times;</span>
+  <h3>RESULTADO NETO</h3>
+  <p>El Beneficio neto es un término existente en contabilidad que se refiere a la diferencia entre ingresos
+    y gastos de cualquier empresa en un periodo determinado. También se le conoce como resultado del ejercicio,
+    especialmente cuando hacemos la cuenta de resultados.</p>
+</div>
+
+<!--CARTA PARA CALCULAR-->
+<div class="w3-container w3-card-4 w3-animate-top" style="display:none; width:100%;" id="calcular"><br/>
+  <header class="w3-container w3-grey" style="text-align:center"><h3>Llenar formato para "Empresa Emprex S.A."</h3></header>
+  <div class="w3-container w3-light-grey">
+    <br/>
+    <div class="w3-cellpading">
+      <h5 class="w3-quarter w3-light-grey" style="width:60%; text-align:left;">+Ingresos por actividades</h5>
+      <input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="IA">
+      <button class="w3-button w3-teal" onclick="mostrarIA()">&#63;</button>
+    </div><br/><br/><br/>
+    <div class="w3-cellpading">
+      <h5 class="w3-quarter w3-light-grey" style="width:60%; text-align:left;">-Descuentos y bonificaciones</h5>
+      <input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN"  id="DB">
+      <button class="w3-button w3-teal" onclick="mostrarDB()">&#63;</button>
+    </div><br/><br/><br/>
+    <div class="w3-cellpading">
+      <h5 class="w3-quarter w3-light-grey" style="width:60%; text-align:left;">=Ingresos operativos netos</h5>
+      <input class="w3-quarter w3-input w3-border w3-gray" type="text" placeholder="MXN" id="ION">
+      <button class="w3-button w3-teal" onclick="mostrarION()">&#63;</button>
+    </div><br/><br/><br/>
+    <div class="w3-cellpading">
+      <h5 class="w3-quarter w3-light-grey" style="width:60%; text-align:left;">-Costo de los bienes vendidos o de los servicios prestados</h5>
+      <input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="CBVSP">
+      <button class="w3-button w3-teal" onclick="mostrarCBVSP()">&#63;</button>
+    </div><br/><br/><br/>
+    <div class="w3-cellpading">
+      <h5 class="w3-quarter w3-light-grey" style="width:60%; text-align:left;">=Resultado bruto</h5>
+      <input class="w3-quarter w3-input w3-border w3-gray" type="text" placeholder="MXN" id="RB">
+      <button class="w3-button w3-teal" onclick="mostrarRB()">&#63;</button>
+    </div><br/><br/><br/>
+    <div class="w3-cellpading">
+      <h5 class="w3-quarter w3-light-grey" style="width:60%; text-align:left;">-Gastos de ventas</h5>
+      <input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="GV">
+      <button class="w3-button w3-teal" onclick="mostrarGV()">&#63;</button>
+    </div><br/><br/><br/>
+    <div class="w3-cellpading">
+      <h5 class="w3-quarter w3-light-grey" style="width:60%; text-align:left;">-Gastos de administracion</h5>
+      <input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="GA">
+      <button class="w3-button w3-teal" onclick="mostrarGA()">&#63;</button>
+    </div><br/><br/><br/>
+    <div class="w3-cellpading">
+      <h5 class="w3-quarter w3-light-grey" style="width:60%; text-align:left;">=Resultado de las operaciones ordinarias</h5>
+      <input class="w3-quarter w3-input w3-border w3-gray" type="text" placeholder="MXN" id="ROO">
+      <button class="w3-button w3-teal" onclick="mostrarROO()">&#63;</button>
+    </div><br/><br/><br/>
+    <div class="w3-cellpading">
+      <h5 class="w3-quarter w3-light-grey" style="width:60%; text-align:left;">+Ingresos financieros</h5>
+      <input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="IF">
+      <button class="w3-button w3-teal" onclick="mostrarIF()">&#63;</button>
+    </div><br/><br/><br/>
+    <div class="w3-cellpading">
+      <h5 class="w3-quarter w3-light-grey" style="width:60%; text-align:left;">-Gastos financieros</h5>
+      <input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="GF">
+      <button class="w3-button w3-teal" onclick="mostrarGF()">&#63;</button>
+    </div><br/><br/><br/>
+    <div class="w3-cellpading">
+      <h5 class="w3-quarter w3-light-grey" style="width:60%; text-align:left;">+Ingresos Extraordinarios</h5>
+      <input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="IE">
+      <button class="w3-button w3-teal" onclick="mostrarIE()">&#63;</button>
+    </div><br/><br/><br/>
+    <div class="w3-cellpading">
+      <h5 class="w3-quarter w3-light-grey" style="width:60%; text-align:left;">-Gastos Extraordinarios</h5>
+      <input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="GE">
+      <button class="w3-button w3-teal" onclick="mostrarGE()">&#63;</button>
+    </div><br/><br/><br/>
+    <div class="w3-cellpading">
+      <h5 class="w3-quarter w3-light-grey" style="width:60%; text-align:left;">+Ingresos de ejercicios anteriores</h5>
+      <input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="IEA">
+      <button class="w3-button w3-teal" onclick="mostrarIEA()">&#63;</button>
+    </div><br/><br/><br/>
+    <div class="w3-cellpading">
+      <h5 class="w3-quarter w3-light-grey" style="width:60%; text-align:left;">-Gastos de ejercicios anteriores</h5>
+      <input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="GEA">
+      <button class="w3-button w3-teal" onclick="mostrarGEA()">&#63;</button>
+    </div><br/><br/><br/>
+    <div class="w3-cellpading">
+      <h5 class="w3-quarter w3-light-grey" style="width:60%; text-align:left;">=Resultado antes de impuesto a las ganancias</h5>
+      <input class="w3-quarter w3-input w3-border w3-gray" type="text" placeholder="MXN" id="RAIG">
+      <button class="w3-button w3-teal" onclick="mostrarRAIG()">&#63;</button>
+    </div><br/><br/><br/>
+    <div class="w3-cellpading">
+      <h5 class="w3-quarter w3-light-grey" style="width:60%; text-align:left;">-Impuesto a las ganancias</h5>
+      <input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="IG">
+      <button class="w3-button w3-teal" onclick="mostrarIG()">&#63;</button>
+    </div><br/><br/><br/>
+    <div class="w3-cellpading">
+      <h5 class="w3-quarter w3-light-grey" style="width:60%; text-align:left;">=Resultado neto</h5>
+      <input class="w3-quarter w3-input w3-border w3-gray" type="text" placeholder="MXN" id=RN>
+      <button class="w3-button w3-teal" onclick="mostrarRN()">&#63;</button>
+    </div><br/><br/><br/>
+    <br/><br/>
+  </div>
+  <button class="w3-btn w3-block w3-teal" id="Calcular" onclick="calcular()">Calcular! :D</button><br/>
+</div> <!--FIN CARTA DE CALCULAR-->
+
+<img src="equilibrio2.jpg" alt="Finanzas" style="width:100%">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+var b = false;
+function w3_openClose(){
+  if(b == false){
+  b = true;
+  var element = document.getElementById("menucito");
+  element.innerHTML = "&#9746;";
+  document.getElementById("main").style.marginLeft = "25%";
+  document.getElementById("mySidebar").style.width = "25%";
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("openNav").style.display = 'none';}
+  else{
+    b = false;
+    var element = document.getElementById("menucito");
+    element.innerHTML = "&#9776;";
+    document.getElementById("main").style.marginLeft = "0%";
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("openNav").style.display = "inline-block";
+  }
+}
+function definicionE(){
+  document.getElementById("calcular").style.display = "none";
+  document.getElementById("alertaEstado").style.display = "none";
+  document.getElementById("definicionE").style.display = "inline-block";
+}
+function Calcular(){//ABRIR CARTA DE CALCULAR
+  document.getElementById("definicionE").style.display = "none";
+  document.getElementById("alertaEstado").style.display = "inline-block";
+  document.getElementById("alertaEstado2").style.display="inline-block";
+  document.getElementById("calcular").style.display = "inline-block";
+}
+
+function calcular(){//CALCULAR DE VERDAD
+var IA=parseInt(document.getElementById("IA").value);
+var DB=parseInt(document.getElementById("DB").value);
+var ION=IA-DB;////CALCULO LOS INGRESOS OPERATIVOS NETOS
+document.getElementById("ION").value=ION;//LOS ESCRIBO EN SU CASILLA
+var CBVSP=parseInt(document.getElementById("CBVSP").value);
+var RB=ION-CBVSP;////CALCULO EL RESULTADO BRUTO
+document.getElementById("RB").value=RB;//LO ESCRIBO EN SU CASILLA
+var GV=parseInt(document.getElementById("GV").value);
+var GA=parseInt(document.getElementById("GA").value);
+var ROO=RB-GV-GA;///CALCULO EL RESULTADO DE OPERACIONE ORDINARIAS
+document.getElementById("ROO").value=ROO;//LO ESCRUBO EN SU CASILLA
+var IF=parseInt(document.getElementById("IF").value);
+var GF=parseInt(document.getElementById("GF").value);
+var IE=parseInt(document.getElementById("IE").value);
+var GE=parseInt(document.getElementById("GE").value);
+var IEA=parseInt(document.getElementById("IEA").value);
+var GEA=parseInt(document.getElementById("GEA").value);
+var RAIG=ROO+IF-GF+IE-GE+IEA-GEA;//CALCULO EL RESULTADO ANTES DE IMPUESTOS DE LAS GANANCIAS
+document.getElementById("RAIG").value=RAIG;//LO ESCRIBO EN SU CASILLA
+var IG=parseInt(document.getElementById("IG").value);
+var RN=RAIG-IG; //CALCULO EL RESULTADO NETO
+document.getElementById("RN").value=RN;//LO ESCRIBO EN SU CASILLA
+}
+
+function mostrarIA(){//definicion IA
+  document.getElementById("db").style.display = "none";
+  document.getElementById("ia").style.display = "inline-block";
+}
+function mostrarDB(){//definicion DB
+  document.getElementById("ia").style.display = "none";
+  document.getElementById("db").style.display = "inline-block";
+}
+function mostrarION(){
+  document.getElementById("ia").style.display = "none";
+  document.getElementById("db").style.display = "none";
+  document.getElementById("cbvsp").style.display = "none";
+  document.getElementById("rb").style.display = "none";
+  document.getElementById("gv").style.display = "none";
+  document.getElementById("ga").style.display = "none";
+  document.getElementById("roo").style.display = "none";
+  document.getElementById("if").style.display = "none";
+  document.getElementById("gf").style.display = "none";
+  document.getElementById("ie").style.display = "none";
+  document.getElementById("ge").style.display = "none";
+  document.getElementById("iea").style.display = "none";
+  document.getElementById("gea").style.display = "none";
+  document.getElementById("raig").style.display = "none";
+  document.getElementById("ig").style.display = "none";
+  document.getElementById("rn").style.display = "none";
+  document.getElementById("ion").style.display = "inline-block";
+}
+
+function mostrarCBVSP(){
+  document.getElementById("ia").style.display = "none";
+  document.getElementById("db").style.display = "none";
+  document.getElementById("ion").style.display = "none";
+  document.getElementById("cbvsp").style.display = "inline-block";
+  document.getElementById("rb").style.display = "none";
+  document.getElementById("gv").style.display = "none";
+  document.getElementById("ga").style.display = "none";
+  document.getElementById("roo").style.display = "none";
+  document.getElementById("if").style.display = "none";
+  document.getElementById("gf").style.display = "none";
+  document.getElementById("ie").style.display = "none";
+  document.getElementById("ge").style.display = "none";
+  document.getElementById("iea").style.display = "none";
+  document.getElementById("gea").style.display = "none";
+  document.getElementById("raig").style.display = "none";
+  document.getElementById("ig").style.display = "none";
+  document.getElementById("rn").style.display = "none";
+}
+
+function mostrarRB(){
+  document.getElementById("ia").style.display = "none";
+  document.getElementById("db").style.display = "none";
+  document.getElementById("ion").style.display = "none";
+  document.getElementById("cbvsp").style.display = "none";
+  document.getElementById("rb").style.display = "inline-block";
+  document.getElementById("gv").style.display = "none";
+  document.getElementById("ga").style.display = "none";
+  document.getElementById("roo").style.display = "none";
+  document.getElementById("if").style.display = "none";
+  document.getElementById("gf").style.display = "none";
+  document.getElementById("ie").style.display = "none";
+  document.getElementById("ge").style.display = "none";
+  document.getElementById("iea").style.display = "none";
+  document.getElementById("gea").style.display = "none";
+  document.getElementById("raig").style.display = "none";
+  document.getElementById("ig").style.display = "none";
+  document.getElementById("rn").style.display = "none";
+}
+function mostrarGV(){
+  document.getElementById("ia").style.display = "none";
+  document.getElementById("db").style.display = "none";
+  document.getElementById("ion").style.display = "none";
+  document.getElementById("cbvsp").style.display = "none";
+  document.getElementById("rb").style.display = "none";
+  document.getElementById("gv").style.display = "inline-block";
+  document.getElementById("ga").style.display = "none";
+  document.getElementById("roo").style.display = "none";
+  document.getElementById("if").style.display = "none";
+  document.getElementById("gf").style.display = "none";
+  document.getElementById("ie").style.display = "none";
+  document.getElementById("ge").style.display = "none";
+  document.getElementById("iea").style.display = "none";
+  document.getElementById("gea").style.display = "none";
+  document.getElementById("raig").style.display = "none";
+  document.getElementById("ig").style.display = "none";
+  document.getElementById("rn").style.display = "none";
+}
+function mostrarGA(){
+  document.getElementById("ia").style.display = "none";
+  document.getElementById("db").style.display = "none";
+  document.getElementById("ion").style.display = "none";
+  document.getElementById("cbvsp").style.display = "none";
+  document.getElementById("rb").style.display = "none";
+  document.getElementById("gv").style.display = "none";
+  document.getElementById("ga").style.display = "inline-block";
+  document.getElementById("roo").style.display = "none";
+  document.getElementById("if").style.display = "none";
+  document.getElementById("gf").style.display = "none";
+  document.getElementById("ie").style.display = "none";
+  document.getElementById("ge").style.display = "none";
+  document.getElementById("iea").style.display = "none";
+  document.getElementById("gea").style.display = "none";
+  document.getElementById("raig").style.display = "none";
+  document.getElementById("ig").style.display = "none";
+  document.getElementById("rn").style.display = "none";
+}
+function mostrarROO(){
+  document.getElementById("ia").style.display = "none";
+  document.getElementById("db").style.display = "none";
+  document.getElementById("ion").style.display = "none";
+  document.getElementById("cbvsp").style.display = "none";
+  document.getElementById("rb").style.display = "none";
+  document.getElementById("gv").style.display = "none";
+  document.getElementById("ga").style.display = "none";
+  document.getElementById("roo").style.display = "inline-block";
+  document.getElementById("if").style.display = "none";
+  document.getElementById("gf").style.display = "none";
+  document.getElementById("ie").style.display = "none";
+  document.getElementById("ge").style.display = "none";
+  document.getElementById("iea").style.display = "none";
+  document.getElementById("gea").style.display = "none";
+  document.getElementById("raig").style.display = "none";
+  document.getElementById("ig").style.display = "none";
+  document.getElementById("rn").style.display = "none";
+}
+function mostrarIF(){
+  document.getElementById("ia").style.display = "none";
+  document.getElementById("db").style.display = "none";
+  document.getElementById("ion").style.display = "none";
+  document.getElementById("cbvsp").style.display = "none";
+  document.getElementById("rb").style.display = "none";
+  document.getElementById("gv").style.display = "none";
+  document.getElementById("ga").style.display = "none";
+  document.getElementById("roo").style.display = "none";
+  document.getElementById("if").style.display = "inline-block";
+  document.getElementById("gf").style.display = "none";
+  document.getElementById("ie").style.display = "none";
+  document.getElementById("ge").style.display = "none";
+  document.getElementById("iea").style.display = "none";
+  document.getElementById("gea").style.display = "none";
+  document.getElementById("raig").style.display = "none";
+  document.getElementById("ig").style.display = "none";
+  document.getElementById("rn").style.display = "none";
+}
+function mostrarGF(){
+  document.getElementById("ia").style.display = "none";
+  document.getElementById("db").style.display = "none";
+  document.getElementById("ion").style.display = "none";
+  document.getElementById("cbvsp").style.display = "none";
+  document.getElementById("rb").style.display = "none";
+  document.getElementById("gv").style.display = "none";
+  document.getElementById("ga").style.display = "none";
+  document.getElementById("roo").style.display = "none";
+  document.getElementById("if").style.display = "none";
+  document.getElementById("gf").style.display = "inline-block";
+  document.getElementById("ie").style.display = "none";
+  document.getElementById("ge").style.display = "none";
+  document.getElementById("iea").style.display = "none";
+  document.getElementById("gea").style.display = "none";
+  document.getElementById("raig").style.display = "none";
+  document.getElementById("ig").style.display = "none";
+  document.getElementById("rn").style.display = "none";
+}
+function mostrarIE(){
+  document.getElementById("ia").style.display = "none";
+  document.getElementById("db").style.display = "none";
+  document.getElementById("ion").style.display = "none";
+  document.getElementById("cbvsp").style.display = "none";
+  document.getElementById("rb").style.display = "none";
+  document.getElementById("gv").style.display = "none";
+  document.getElementById("ga").style.display = "none";
+  document.getElementById("roo").style.display = "none";
+  document.getElementById("if").style.display = "none";
+  document.getElementById("gf").style.display = "none";
+  document.getElementById("ie").style.display = "inline-block";
+  document.getElementById("ge").style.display = "none";
+  document.getElementById("iea").style.display = "none";
+  document.getElementById("gea").style.display = "none";
+  document.getElementById("raig").style.display = "none";
+  document.getElementById("ig").style.display = "none";
+  document.getElementById("rn").style.display = "none";
+}
+function mostrarGE(){
+  document.getElementById("ia").style.display = "none";
+  document.getElementById("db").style.display = "none";
+  document.getElementById("ion").style.display = "none";
+  document.getElementById("cbvsp").style.display = "none";
+  document.getElementById("rb").style.display = "none";
+  document.getElementById("gv").style.display = "none";
+  document.getElementById("ga").style.display = "none";
+  document.getElementById("roo").style.display = "none";
+  document.getElementById("if").style.display = "none";
+  document.getElementById("gf").style.display = "none";
+  document.getElementById("ie").style.display = "none";
+  document.getElementById("ge").style.display = "inline-block";
+  document.getElementById("iea").style.display = "none";
+  document.getElementById("gea").style.display = "none";
+  document.getElementById("raig").style.display = "none";
+  document.getElementById("ig").style.display = "none";
+  document.getElementById("rn").style.display = "none";
+}
+function mostrarIEA(){
+  document.getElementById("ia").style.display = "none";
+  document.getElementById("db").style.display = "none";
+  document.getElementById("ion").style.display = "none";
+  document.getElementById("cbvsp").style.display = "none";
+  document.getElementById("rb").style.display = "none";
+  document.getElementById("gv").style.display = "none";
+  document.getElementById("ga").style.display = "none";
+  document.getElementById("roo").style.display = "none";
+  document.getElementById("if").style.display = "none";
+  document.getElementById("gf").style.display = "none";
+  document.getElementById("ie").style.display = "none";
+  document.getElementById("ge").style.display = "none";
+  document.getElementById("iea").style.display = "inline-block";
+  document.getElementById("gea").style.display = "none";
+  document.getElementById("raig").style.display = "none";
+  document.getElementById("ig").style.display = "none";
+  document.getElementById("rn").style.display = "none";
+}
+function mostrarGEA(){
+  document.getElementById("ia").style.display = "none";
+  document.getElementById("db").style.display = "none";
+  document.getElementById("ion").style.display = "none";
+  document.getElementById("cbvsp").style.display = "none";
+  document.getElementById("rb").style.display = "none";
+  document.getElementById("gv").style.display = "none";
+  document.getElementById("ga").style.display = "none";
+  document.getElementById("roo").style.display = "none";
+  document.getElementById("if").style.display = "none";
+  document.getElementById("gf").style.display = "none";
+  document.getElementById("ie").style.display = "none";
+  document.getElementById("ge").style.display = "none";
+  document.getElementById("iea").style.display = "none";
+  document.getElementById("raig").style.display = "none";
+  document.getElementById("ig").style.display = "none";
+  document.getElementById("rn").style.display = "none";
+  document.getElementById("gea").style.display = "inline-block";
+}
+function mostrarRAIG(){
+  document.getElementById("ia").style.display = "none";
+  document.getElementById("db").style.display = "none";
+  document.getElementById("ion").style.display = "none";
+  document.getElementById("cbvsp").style.display = "none";
+  document.getElementById("rb").style.display = "none";
+  document.getElementById("gv").style.display = "none";
+  document.getElementById("ga").style.display = "none";
+  document.getElementById("roo").style.display = "none";
+  document.getElementById("if").style.display = "none";
+  document.getElementById("gf").style.display = "none";
+  document.getElementById("ie").style.display = "none";
+  document.getElementById("ge").style.display = "none";
+  document.getElementById("iea").style.display = "none";
+  document.getElementById("gea").style.display = "none";
+  document.getElementById("ig").style.display = "none";
+  document.getElementById("rn").style.display = "none";
+  document.getElementById("raig").style.display = "inline-block";
+}
+function mostrarIG(){
+  document.getElementById("ia").style.display = "none";
+  document.getElementById("db").style.display = "none";
+  document.getElementById("ion").style.display = "none";
+  document.getElementById("cbvsp").style.display = "none";
+  document.getElementById("rb").style.display = "none";
+  document.getElementById("gv").style.display = "none";
+  document.getElementById("ga").style.display = "none";
+  document.getElementById("roo").style.display = "none";
+  document.getElementById("if").style.display = "none";
+  document.getElementById("gf").style.display = "none";
+  document.getElementById("ie").style.display = "none";
+  document.getElementById("ge").style.display = "none";
+  document.getElementById("iea").style.display = "none";
+  document.getElementById("gea").style.display = "none";
+  document.getElementById("raig").style.display = "none";
+  document.getElementById("rn").style.display = "none";
+  document.getElementById("ig").style.display = "inline-block";
+}
+function mostrarRN(){
+  document.getElementById("ia").style.display = "none";
+  document.getElementById("db").style.display = "none";
+  document.getElementById("ion").style.display = "none";
+  document.getElementById("cbvsp").style.display = "none";
+  document.getElementById("rb").style.display = "none";
+  document.getElementById("gv").style.display = "none";
+  document.getElementById("ga").style.display = "none";
+  document.getElementById("roo").style.display = "none";
+  document.getElementById("if").style.display = "none";
+  document.getElementById("gf").style.display = "none";
+  document.getElementById("ie").style.display = "none";
+  document.getElementById("ge").style.display = "none";
+  document.getElementById("iea").style.display = "none";
+  document.getElementById("gea").style.display = "none";
+  document.getElementById("raig").style.display = "none";
+  document.getElementById("ig").style.display = "none";
+  document.getElementById("rn").style.display = "inline-block";
+}
+
+</script>
+
+</body>
+</html>
