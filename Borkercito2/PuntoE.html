@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 	<title>Punto E</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="Chart.min.js"></script>
@@ -434,4 +435,332 @@
 		 }
 		</script>
 	</body>
+=======
+<title>Punto E</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<body>
+
+<!--COLUMNA EL MENU-->
+<div class="w3-sidebar w3-bar-block  w3-black w3-animate-left w3-card" style="display:none" id="mySidebar">
+  <a href="index.html" class="w3-bar-item w3-button">&#9754; Inicio</a><br/>
+  <buttom class="w3-bar-item w3-button" onclick="pasos()">Pasos para calcular el PE</buttom>
+  <buttom class="w3-bar-item w3-button" onclick="definicionP()">¿Qué es el punto de equilibrio?</buttom>
+  <buttom class="w3-bar-item w3-button" onclick="costos()">¿Qué son los costos?</buttom>
+  <buttom class="w3-bar-item w3-button" onclick="costosVariables()">¿Qué son los costos variables?</buttom>
+  <buttom class="w3-bar-item w3-button" onclick="costosFijos()">¿Qué son los costos fijos?</buttom>
+  <buttom class="w3-bar-item w3-button" onclick="costoUnitario()">¿Cómo hallar el costo variable unitario?</buttom>
+  <buttom class="w3-bar-item w3-button" onclick="formula()">Fórmula del punto de equilibrio</buttom>
+  <buttom class="w3-bar-item w3-button" onclick="Empezar()">Empezar :)</buttom>
+  <h3 href="#" class="w3-bar-item">Otros cursos:</h3>
+  <a href="balanceG.html" class="w3-bar-item w3-button">Balance General</a>
+  <a href="EstadoR.html" class="w3-bar-item w3-button">Estado de Resultados</a>
+</div>
+
+<!--AQUI INICIA EL MAIN... ES DONDE APARECEN TODAS LAS CARTAS, ESTA LA FOTO DE BACKGROUND, ALERTAS, ETC-->
+<div zclass="w3-main" id="main">
+<div>
+  <button class="w3-button w3-black w3-xlarge" onclick="w3_openClose()" id='menucito'>&#9776;</button>
+  <div class="w3-container">
+    <h1>PUNTO DE EQUILIBRIO</h1>
+  </div>
+</div>
+
+<!--En esta carta a diferencia de las otras páginas, muestra los pasos a seguir -->
+<div class="w3-container w3-card-4 w3-animate-top" style="display:inline-block; width:100%;" id="pasos">
+  <header class="w3-container w3-grey"><h1>Pasos para calcular el punto de equilibrio</h1></header>
+  <div class="w3-container w3-light-grey">
+    <h3>1- Definir los costos</h3>
+    <h3>2- Clasificar costos en Costos Variables (CV) y en Costos Fijos (CF)</h3>
+    <h3>3- Hallar el costo variable unitario</h3>
+    <h3>4- Aplicar la fórmula del punto de equilibrio</h3>
+    <h3>5- Comprobar resultados</h3>
+    <h3>6- Análisis del punto de equilibrio</h3>
+  </div>
+</div>
+
+
+<!--Definición Punto de quilibrio-->
+<div class="w3-container w3-card-4 w3-animate-top" style="display:none; width:100%;" id="definicionP">
+  <header class="w3-container w3-grey"><h1>¿Qué es el punto de equilibrio?</h1></header>
+  <div class="w3-container w3-light-grey">
+    <p>Es aquel punto de actividad (volumen de ventas) en donde los ingresos son iguales a los costos,
+      es decir, es el punto de actividad en donde no existe utilidad ni pérdida.</p>
+    <p><b>¿Y para qué nos sirve saber eso?, </b></p>
+    <p>Bueno, Hallar y analizar el punto de equilibrio nos permite, por ejemplo:</p>
+    <p>Obtener una primera simulación que nos permita saber a partir de qué cantidad de
+      ventas empezaremos a generar utilidades.</p>
+    <p>Conocer la viabilidad de un proyecto (cuando nuestra demanda supera nuestro punto de equilibrio).</p>
+    <p>Saber a partir de qué nivel de ventas puede ser recomendable cambiar un Costo Variable por un Costo Fijo
+      o viceversa, por ejemplo, cambiar comisiones de ventas por un sueldo fijo en un vendedor.</p>
+  </div>
+</div>
+
+<!--Costos-->
+<div class="w3-container w3-card-4 w3-animate-top" style="display:none; width:100%;" id="costos">
+  <header class="w3-container w3-grey"><h1>Costos</h1></header>
+  <div class="w3-container w3-light-grey">
+    <p> Lo usual es considerar como costos a todos los desembolsos, incluyendo los gastos de administración
+      y de ventas, pero sin incluir los gastos financieros ni los impuestos</p>
+
+  </div>
+</div>
+
+<!--Costos variables-->
+<div class="w3-container w3-card-4 w3-animate-top" style="display:none; width:100%;" id="costosVariables">
+  <header class="w3-container w3-grey"><h1>Costos Variables</h1></header>
+  <div class="w3-container w3-light-grey">
+    <p>Estos costos varían de acuerdo con los cambios en los niveles de actividad, están relacionados
+      con el número de unidades vendidas (en el caso de una empresa comercializadora), volumen de producción
+      (en el caso de una empresa industrial), o número de servicios realizado (en el caso de una empresa de servicios);
+      ejemplos de costos variables son los costos incurridos en materia prima, combustible, salario por horas, etc.</p>
+  </div>
+</div>
+
+<!--Costos fijos-->
+<div class="w3-container w3-card-4 w3-animate-top" style="display:none; width:100%;" id="costosFijos">
+  <header class="w3-container w3-grey"><h1>Costos Fijos</h1></header>
+  <div class="w3-container w3-light-grey">
+    <p>Son costos que no están afectados por las variaciones en los niveles de actividad; ejemplos de
+      costos fijos son los alquileres, depreciación, seguros, etc.</p>
+  </div>
+</div>
+
+<!--Costo unitario-->
+<div class="w3-container w3-card-4 w3-animate-top" style="display:none; width:100%;" id="costoUnitario">
+  <header class="w3-container w3-grey"><h1>Costo Unitario</h1></header>
+  <div class="w3-container w3-light-grey">
+    <p>Este paso consiste en hallar el Costo Variable Unitario (CVU), el cual se obtiene al dividir los
+      Costos Variables Totales entre el número de unidades producidas y vendidas (Q).</p>
+  </div>
+</div>
+
+<!--formula-->
+<div class="w3-container w3-card-4 w3-animate-top" style="display:none; width:100%;" id="formula">
+  <header class="w3-container w3-grey"><h2>Aplicar la fórmula</h2></header>
+  <div class="w3-container w3-light-grey">
+    <p>La fórmula para hallar el punto de equilibrio es:</p>
+    <table class="w3-panel w3-border w3-round-large w3-border-black"><tr><td>Pe = CF / (PVU – CVU)</td></tr></table>
+    <p>Donde:</p>
+    <p><b>Pe:</b> punto de equilibrio (unidades a vender de tal modo que los ingresos sean iguales a los costos).</p>
+    <p><b>CF:</b> costos fijos.</p>
+    <p><b>PVU:</b> precio de venta unitario.</p>
+    <p><b>CVU:</b> costo variable unitario.</p>
+    <p>El resultado de la fórmula será en unidades físicas; si queremos hallar el punto de equilibrio en unidades
+      monetarias, simplemente debemos multiplicar el resultado por el precio de venta.</p>
+  </div>
+</div>
+
+<!--CARTA CALCULAR PUNTO DE EQUILIBRIO-->
+<div class="w3-container w3-card-4 w3-animate-top" style="display:none; width:100%;" id="empezar"><br/>
+  <header class="w3-container w3-grey" style="text-align:center"><h3>Llenar formato PE para "Empresa Emprex S.A."</h3></header>
+  <div class="w3-container w3-light-grey"><br/>
+    <div class="w3-row">
+      <h4 class="w3-quarter w3-center"><b>CUENTA</b></h4>
+      <h4 class="w3-quarter w3-center"><b>MONTO</b></h4>
+      <h4 class="w3-quarter w3-center"><b>AGREGAR</b></h4>
+      <h4 class="w3-quarter w3-center"><b>TOTAL</b></h4>
+    </div><br/><br/>
+
+    <div class="w3-row"><!--Linea costos fijos-->
+      <h5 class="w3-quarter w3-light-grey">Costos fijos</h5>
+      <input class="w3-quarter w3-input w3-border w3-gray" type="text" placeholder="MXN" id=CF>
+      <div class="w3-quarter w3-center">
+        <button class="w3-layout-middle w3-button w3-large w3-circle w3-teal" onclick="CF()"><b>&#43;</b></button>
+      </div>
+      <input class="w3-quarter w3-input w3-border w3-gray" type="text" placeholder="MXN" id=CF2>
+    </div><br/><br/>
+
+    <div class="w3-row"><!--Línea costos variables-->
+      <h5 class="w3-quarter w3-light-grey">Costos variables</h5>
+      <input class="w3-quarter w3-input w3-border w3-gray" type="text" placeholder="MXN" id=CV>
+      <div class="w3-quarter w3-center">
+        <button class="w3-layout-middle w3-button w3-large w3-circle w3-teal" onclick="CV()"><b>&#43;</b></button>
+      </div>
+      <input class="w3-quarter w3-input w3-border w3-gray" type="text" placeholder="MXN" id=CV2>
+    </div><br/><br/>
+
+    <div class="w3-row"><!--Linea precio de venta unitario-->
+      <h5 class="w3-quarter w3-light-grey">Precio de venta unitario</h5>
+      <input class="w3-quarter w3-input w3-border w3-gray" type="text" placeholder="MXN" id=PVU>
+      <div class="w3-quarter w3-center">
+        <button class="w3-layout-middle w3-button w3-large w3-circle w3-teal" onclick="PVU()"><b>&#43;</b></button>
+      </div>
+      <input class="w3-quarter w3-input w3-border w3-gray" type="text" placeholder="MXN" id=PVU2>
+    </div><br/><br/>
+
+    <div class="w3-row"><!--Línea de unidades producidas y vendidas-->
+      <h5 class="w3-quarter w3-light-grey">Unidades producidas y vendidas</h5>
+      <input class="w3-quarter w3-input w3-border w3-gray" type="text" placeholder="MXN" id=UPV>
+      <div class="w3-quarter w3-center">
+        <button class="w3-layout-middle w3-button w3-large w3-circle w3-teal" onclick="UPV()"><b>&#43;</b></button>
+      </div>
+      <input class="w3-quarter w3-input w3-border w3-gray" type="text" placeholder="MXN" id=UPV2>
+    </div>
+    <button class="w3-btn w3-block w3-teal" id="Calcular" onclick="kalcular()">Calcular! :D</button><br/>
+  </div>
+</div>
+
+<img src="equilibrio2.jpg" alt="Finanzas" style="width:100%">
+
+</div>
+
+<script>
+var CF2=0;
+var UPV2=0;
+var PVU2=0;
+var CV2=0;
+var b = false;
+var CVU=0;
+var PE=0;
+function w3_openClose(){
+  if(b == false){
+  b = true;
+  var element = document.getElementById("menucito");
+  element.innerHTML = "&#9746;";
+  document.getElementById("main").style.marginLeft = "25%";
+  document.getElementById("mySidebar").style.width = "25%";
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("openNav").style.display = 'none';}
+  else{
+    b = false;
+    var element = document.getElementById("menucito");
+    element.innerHTML = "&#9776;";
+    document.getElementById("main").style.marginLeft = "0%";
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("openNav").style.display = "inline-block";
+  }
+}
+
+function pasos(){
+  document.getElementById("empezar").style.display = "none";
+  document.getElementById("definicionP").style.display = "none";
+  document.getElementById("costos").style.display = "none";
+  document.getElementById("costosFijos").style.display = "none";
+  document.getElementById("costosVariables").style.display = "none";
+  document.getElementById("costoUnitario").style.display = "none";
+  document.getElementById("formula").style.display = "none";
+  document.getElementById("pasos").style.display = "inline-block";
+}
+
+function definicionP(){
+  document.getElementById("empezar").style.display = "none";
+  document.getElementById("pasos").style.display = "none";
+  document.getElementById("costos").style.display = "none";
+  document.getElementById("costosFijos").style.display = "none";
+  document.getElementById("costosVariables").style.display = "none";
+  document.getElementById("costoUnitario").style.display = "none";
+  document.getElementById("formula").style.display = "none";
+  document.getElementById("definicionP").style.display = "inline-block";
+}
+
+
+function costos(){
+  document.getElementById("empezar").style.display = "none";
+  document.getElementById("pasos").style.display = "none";
+  document.getElementById("definicionP").style.display = "none";
+  document.getElementById("costosFijos").style.display = "none";
+  document.getElementById("costosVariables").style.display = "none";
+  document.getElementById("costoUnitario").style.display = "none";
+  document.getElementById("formula").style.display = "none";
+  document.getElementById("costos").style.display = "inline-block";
+}
+
+function costosVariables(){
+  document.getElementById("empezar").style.display = "none";
+  document.getElementById("pasos").style.display = "none";
+  document.getElementById("costos").style.display = "none";
+  document.getElementById("costosFijos").style.display = "none";
+  document.getElementById("definicionP").style.display = "none";
+  document.getElementById("costoUnitario").style.display = "none";
+  document.getElementById("formula").style.display = "none";
+  document.getElementById("costosVariables").style.display = "inline-block";
+}
+
+function costosFijos(){
+  document.getElementById("empezar").style.display = "none";
+  document.getElementById("pasos").style.display = "none";
+  document.getElementById("costos").style.display = "none";
+  document.getElementById("definicionP").style.display = "none";
+  document.getElementById("costosVariables").style.display = "none";
+  document.getElementById("costoUnitario").style.display = "none";
+  document.getElementById("formula").style.display = "none";
+  document.getElementById("costosFijos").style.display = "inline-block";
+}
+
+function costoUnitario(){
+  document.getElementById("empezar").style.display = "none";
+  document.getElementById("pasos").style.display = "none";
+  document.getElementById("costos").style.display = "none";
+  document.getElementById("costosFijos").style.display = "none";
+  document.getElementById("costosVariables").style.display = "none";
+  document.getElementById("definicionP").style.display = "none";
+  document.getElementById("formula").style.display = "none";
+  document.getElementById("costoUnitario").style.display = "inline-block";
+}
+
+function formula(){
+  document.getElementById("empezar").style.display = "none";
+  document.getElementById("pasos").style.display = "none";
+  document.getElementById("costos").style.display = "none";
+  document.getElementById("costosFijos").style.display = "none";
+  document.getElementById("costosVariables").style.display = "none";
+  document.getElementById("costoUnitario").style.display = "none";
+  document.getElementById("definicionP").style.display = "none";
+  document.getElementById("formula").style.display = "inline-block";
+}
+
+function Empezar(){
+  document.getElementById("pasos").style.display = "none";
+  document.getElementById("costos").style.display = "none";
+  document.getElementById("costosFijos").style.display = "none";
+  document.getElementById("costosVariables").style.display = "none";
+  document.getElementById("costoUnitario").style.display = "none";
+  document.getElementById("definicionP").style.display = "none";
+  document.getElementById("formula").style.display = "none";
+  document.getElementById("empezar").style.display = "inline-block";
+}
+
+function CF(){
+  var CF=parseInt(document.getElementById("CF").value);
+  if(CF!=null){
+    CF2=CF2+CF;
+    document.getElementById("CF2").value=CF2;
+    document.getElementById("CF").value="";}
+}
+
+function CV(){
+  var CV=parseInt(document.getElementById("CV").value);
+  if(CV!=null){
+    CV2=CV2+CV;
+    document.getElementById("CV2").value=CV2;
+    document.getElementById("CV").value="";}
+}
+
+function PVU(){
+  var PVU=parseInt(document.getElementById("PVU").value);
+  if(PVU!=null){
+    PVU2=PVU2+PVU;
+    document.getElementById("PVU2").value=PVU2;
+    document.getElementById("PVU").value="";}
+}
+function UPV(){
+  var UPV=parseInt(document.getElementById("UPV").value);
+  if(UPV!=null){
+    UPV2=UPV2+UPV;
+    document.getElementById("UPV2").value=UPV2;
+    document.getElementById("UPV").value="";}
+}
+
+function kalcular(){
+  CVU=CV2/PVU2;
+  PE=CF2/(PVU2-CVU);
+  console.log(PE);
+}
+
+
+</script>
+
+</body>
+>>>>>>> 1c6d90dbd84e2f63a96770dac03f140e152a8bfe
 </html>
