@@ -1,524 +1,546 @@
 <!DOCTYPE html>
 <html>
-<title>Balance G</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="w3.css">
-<body>
+	<title>Balance G</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="w3.css">
+	<script src="jspdf.js"></script>
+	<script src="from_html.js"></script>
+	<script src="standard_fonts_metrics.js"></script>
+	<script src="split_text_to_size.js"></script>
+	<body>
 
-<!--COLUMNA EL MENU-->
-<div class="w3-sidebar w3-bar-block  w3-black w3-animate-left w3-card" style="display:none" id="mySidebar">
-  <br/>
-  <a href="index.html" class="w3-bar-item w3-button">&#9754; Inicio</a>
-  <br/>
-  <buttom class="w3-bar-item w3-button" onclick="w3_abrirDefinicion()">¿Qué es el balance general?</buttom>
-  <buttom class="w3-bar-item w3-button" onclick="w3_abrirActivos()">¿Qué son los activos?</buttom>
-  <buttom class="w3-bar-item w3-button" onclick="w3_abrirPasivos()">¿Qué son los pasivos?</buttom>
-  <buttom class="w3-bar-item w3-button" onclick="w3_abrirCapital()">¿Qué es el capital contable?</buttom>
-  <buttom class="w3-bar-item w3-button" onclick="w3_empezar()">Empezar :)</buttom>
-  <p></p>
-  <h3 href="#" class="w3-bar-item">Otros cursos:</h3>
-  <a href="PuntoE.html" class="w3-bar-item w3-button">Punto de Equilibrio</a>
-  <a href="EstadoR.html" class="w3-bar-item w3-button">Estado de Resultados</a>
-</div>
+		<!--COLUMNA EL MENU-->
+		<div class="w3-sidebar w3-bar-block  w3-black w3-animate-left w3-card" style="display:none" id="mySidebar">
+			<br/>
+			<a href="index.html" class="w3-bar-item w3-button">&#9754; Inicio</a>
+			<br/>
+			<buttom class="w3-bar-item w3-button" onclick="w3_abrirDefinicion()">¿Qué es el balance general?</buttom>
+			<buttom class="w3-bar-item w3-button" onclick="w3_abrirActivos()">¿Qué son los activos?</buttom>
+			<buttom class="w3-bar-item w3-button" onclick="w3_abrirPasivos()">¿Qué son los pasivos?</buttom>
+			<buttom class="w3-bar-item w3-button" onclick="w3_abrirCapital()">¿Qué es el capital contable?</buttom>
+			<buttom class="w3-bar-item w3-button" onclick="w3_empezar()">Empezar :)</buttom>
+			<p></p>
+			<h3 href="#" class="w3-bar-item">Otros cursos:</h3>
+			<a href="PuntoE.html" class="w3-bar-item w3-button">Punto de Equilibrio</a>
+			<a href="EstadoR.html" class="w3-bar-item w3-button">Estado de Resultados</a>
+		</div>
 
-<!--AQUI INICIA EL MAIN... ES DONDE APARECEN TODAS LAS CARTAS, ESTA LA FOTO DE BACKGROUND, ALERTAS, ETC-->
-<div zclass="w3-main" id="main">
+		<!--AQUI INICIA EL MAIN... ES DONDE APARECEN TODAS LAS CARTAS, ESTA LA FOTO DE BACKGROUND, ALERTAS, ETC-->
+		<div zclass="w3-main" id="main">
 
-<!--TITULO Y BOTON PARA ABRIR EL MENU-->
-<div>
-  <button class="w3-button w3-black w3-xlarge" onclick="w3_openClose()" id='menucito'>&#9776;</button>
-  <div class="w3-container">
-    <h1>BALANCE GENERAL</h1>
-  </div>
-</div>
+			<!--TITULO Y BOTON PARA ABRIR EL MENU-->
+			<div>
+				<button class="w3-button w3-black w3-xlarge" onclick="w3_openClose()" id='menucito'>&#9776;</button>
+				<div class="w3-container">
+					<h1>BALANCE GENERAL</h1>
+				</div>
+			</div>
 
-<!--CARTA EXPLICATIVA BALANCE GENERAL-->
-<div class="w3-container w3-card-4 w3-animate-top" style="display:none" id="definicion">
-  <header class="w3-container w3-grey"><h1>¿Qué es el Balance General?</h1></header>
-  <div class="w3-container w3-light-grey">
-    <p>El balance general es el estado financiero de una empresa en un momento determinado. Para
-      poder reflejar dicho estado, el balance muestra contablemente los activos (lo que organización
-      posee), los pasivos (sus deudas) y la diferencia entre estos (el patrimonio neto).</p>
-    <p>El balance general, por lo tanto, es una especie de fotografía que retrata la situación contable
-     de la empresa en una cierta fecha. Gracias a este documento, el empresario accede a información
-     vital sobre su negocio, como la disponibilidad de dinero y el estado de sus deudas.</p>
-  </div>
-</div>
+			<!--CARTA EXPLICATIVA BALANCE GENERAL-->
+			<div class="w3-container w3-card-4 w3-animate-top" style="display:none" id="definicion">
+				<header class="w3-container w3-grey"><h1>¿Qué es el Balance General?</h1></header>
+				<div class="w3-container w3-light-grey">
+					<p>El balance general es el estado financiero de una empresa en un momento determinado. Para
+						poder reflejar dicho estado, el balance muestra contablemente los activos (lo que organización
+						posee), los pasivos (sus deudas) y la diferencia entre estos (el patrimonio neto).</p>
+					<p>El balance general, por lo tanto, es una especie de fotografía que retrata la situación contable
+						de la empresa en una cierta fecha. Gracias a este documento, el empresario accede a información
+						vital sobre su negocio, como la disponibilidad de dinero y el estado de sus deudas.</p>
+				</div>
+			</div>
 
-<!--CARTA EXPLICATIVA ACTIVOS-->
-<div class="w3-container w3-card-4 w3-animate-top" style="display:none" id="activos"><!--CARD ACTIVOS-->
-  <header class="w3-container w3-grey"><h1>¿Qué es un activo?</h1></header>
-  <div class="w3-container w3-light-grey">
-    <p>El activo de la empresa está formado por el dinero que tiene en caja y en los bancos, las cuentas por cobrar, las materias primas, las máquinas, los vehículos, los edificios y los terrenos.</p>
+			<!--CARTA EXPLICATIVA ACTIVOS-->
+			<div class="w3-container w3-card-4 w3-animate-top" style="display:none" id="activos"><!--CARD ACTIVOS-->
+				<header class="w3-container w3-grey"><h1>¿Qué es un activo?</h1></header>
+				<div class="w3-container w3-light-grey">
+					<p>El activo de la empresa está formado por el dinero que tiene en caja y en los bancos, las cuentas por cobrar, las materias primas, las máquinas, los vehículos, los edificios y los terrenos.</p>
     </br>
     <p>En el caso de los activos tenemos que subrayar que estos se suelen clasificarse en tres tipos claramente delimitados:</p>
     <p>Activos corrientes. Entre los mismos se encuentran aquellos elementos que son capaces de convertirse fácilmente en dinero efectivo. De ahí que dentro de esta tipología se hallen el dinero que hay en el banco y el que existe disponible en la propia empresa, las cuentas que quedan por cobrar de clientes, los cheques que hay que cobrar y lo que son los bienes inventariados (materias primas, productos terminados, productos en proceso de elaboración…).</p>
     <p>Activos fijos. Bajo dicha denominación incluyen todos los inmuebles y los bienes muebles que la empresa en cuestión tiene y que le son básicos para el desempeño de su actividad. De esta manera, ejemplos de activos de este tipo son los vehículos, los muebles, los terrenos, las construcciones o la maquinaría, entre otros. Es importante saber que estos activos están sometidos a lo que se conoce por el nombre de depreciación, es decir, al desgaste que sufren por el uso.</p>
     <p>Otros activos. En esta clasificación se incluyen los activos que no pertenecen a ninguna de las dos categorías anteriormente citados. Ejemplos de aquellos serían los gastos que son abonados de manera anticipada.</p>
-  </div>
-</div>
+				</div>
+			</div>
 
-<!--CARTA EXPLICATIVA PASIVOS-->
-<div class="w3-container w3-card-4 w3-animate-top" style="display:none" id="pasivos"><!--CARD PASIVOS-->
-  <header class="w3-container w3-grey"><h1>¿Qué son los pasivos?</h1></header>
-  <div class="w3-container w3-light-grey">
-    <p>El pasivo, en cambio, se compone por las deudas, las obligaciones bancarias y los impuestos por pagar, entre otras cuestiones.</p>
-    <p>En el caso de los pasivos estos también pueden clasificarse en tres categorías:</p>
-    <p>Pasivos a largo plazo. Son los que la empresa debe abonar en el plazo superior a un año.</p>
-    <p>Pasivos corrientes. Son los que la industria debe pagar en el plazo menor a un año: prestaciones, sobregiros, créditos…</p>
-    <p>Otros pasivos. Son los que no se incluyen en ninguna de las dos anteriores clasificaciones. </p>
-  </div>
-</div>
+			<!--CARTA EXPLICATIVA PASIVOS-->
+			<div class="w3-container w3-card-4 w3-animate-top" style="display:none" id="pasivos"><!--CARD PASIVOS-->
+				<header class="w3-container w3-grey"><h1>¿Qué son los pasivos?</h1></header>
+				<div class="w3-container w3-light-grey">
+					<p>El pasivo, en cambio, se compone por las deudas, las obligaciones bancarias y los impuestos por pagar, entre otras cuestiones.</p>
+					<p>En el caso de los pasivos estos también pueden clasificarse en tres categorías:</p>
+					<p>Pasivos a largo plazo. Son los que la empresa debe abonar en el plazo superior a un año.</p>
+					<p>Pasivos corrientes. Son los que la industria debe pagar en el plazo menor a un año: prestaciones, sobregiros, créditos…</p>
+					<p>Otros pasivos. Son los que no se incluyen en ninguna de las dos anteriores clasificaciones. </p>
+				</div>
+			</div>
 
-<!--CARTA EXPLICATIVA CAPITAL-->
-<div class="w3-container w3-card-4 w3-animate-top" style="display:none" id="capital"><!--CARD CAPITAL-->
-  <header class="w3-container w3-grey"><h1>¿Qué es el capital contable?</h1></header>
-  <div class="w3-container w3-light-grey">
-    <p>Aportaciones de los socios o accionistas, más la utilidad del o los ejercicios anteriores, más las reservas de capital, menos las pérdidas del o los ejercicios anteriores.</p>
-    <p>Capital contable se le designa con diferentes términos: patrimonio de los accionistas; capital social y utilidades retenidas, o capital social y déficit.</p>
-    <p>El capital contable está integrado por:</p>
-    <p>Capital Social: Son los importes correspondientes a las aportaciones de los accionistas. Otras aportaciones de los socios y accionistas.</p>
-    <p>Utilidades retenidas: Importe de la utilidad obtenida.</p>
-    <p>Pérdidas acumuladas: Pérdida del ejercicio sufrida al final del o los ejercicios anteriores. (se amortiza poco a poco).</p>
-  </div>
-</div>
+			<!--CARTA EXPLICATIVA CAPITAL-->
+			<div class="w3-container w3-card-4 w3-animate-top" style="display:none" id="capital"><!--CARD CAPITAL-->
+				<header class="w3-container w3-grey"><h1>¿Qué es el capital contable?</h1></header>
+				<div class="w3-container w3-light-grey">
+					<p>Aportaciones de los socios o accionistas, más la utilidad del o los ejercicios anteriores, más las reservas de capital, menos las pérdidas del o los ejercicios anteriores.</p>
+					<p>Capital contable se le designa con diferentes términos: patrimonio de los accionistas; capital social y utilidades retenidas, o capital social y déficit.</p>
+					<p>El capital contable está integrado por:</p>
+					<p>Capital Social: Son los importes correspondientes a las aportaciones de los accionistas. Otras aportaciones de los socios y accionistas.</p>
+					<p>Utilidades retenidas: Importe de la utilidad obtenida.</p>
+					<p>Pérdidas acumuladas: Pérdida del ejercicio sufrida al final del o los ejercicios anteriores. (se amortiza poco a poco).</p>
+				</div>
+			</div>
 
-<!-- ALERTA CON BOTON DE CERRAR ACTIVOS-->
-<div class="w3-panel w3-blue w3-display-container w3-animate-top" style="display:none; position:fixed; z-index:10; top:0px;" id="alertaActivos">
-  <span onclick="this.parentElement.style.display='none'"
-  class="w3-button w3-blue w3-large w3-display-topright">&times;</span>
-  <h3>Recuerda...</h3>
-  <p>Cada vez que introduces o restas un activo, debe pasar algo similar en la cuenta de pasivos, para que la cuenta quede balanceada</p>
-</div>
+			<!-- ALERTA CON BOTON DE CERRAR ACTIVOS-->
+			<div class="w3-panel w3-blue w3-display-container w3-animate-top" style="display:none; position:fixed; z-index:10; top:0px;" id="alertaActivos">
+				<span onclick="this.parentElement.style.display='none'"
+							class="w3-button w3-blue w3-large w3-display-topright">&times;</span>
+				<h3>Recuerda...</h3>
+				<p>Cada vez que introduces o restas un activo, debe pasar algo similar en la cuenta de pasivos, para que la cuenta quede balanceada</p>
+			</div>
 
-<!-- ALERTA CON BOTON DE CERRAR PASIVOS-->
-<div class="w3-panel w3-blue w3-display-container w3-animate-top" style="display:none; position:fixed; z-index:10; top:0px;" id="alertaPasivos">
-  <span onclick="this.parentElement.style.display='none'"
-  class="w3-button w3-blue w3-large w3-display-topright">&times;</span>
-  <h3>Recuerda...</h3>
-  <p>Cada vez que introduces o restas un pasivo, debe pasar algo similar en la cuenta de activos, para que la cuenta quede balanceada</p>
-</div>
+			<!-- ALERTA CON BOTON DE CERRAR PASIVOS-->
+			<div class="w3-panel w3-blue w3-display-container w3-animate-top" style="display:none; position:fixed; z-index:10; top:0px;" id="alertaPasivos">
+				<span onclick="this.parentElement.style.display='none'"
+							class="w3-button w3-blue w3-large w3-display-topright">&times;</span>
+				<h3>Recuerda...</h3>
+				<p>Cada vez que introduces o restas un pasivo, debe pasar algo similar en la cuenta de activos, para que la cuenta quede balanceada</p>
+			</div>
 
-<!-- ALERTA CON BOTON DE CERRAR CAPITAL-->
-<div class="w3-panel w3-blue w3-display-container w3-animate-top" style="display:none; position:fixed; z-index:10; top:0px;" id="alertaCapital">
-  <span onclick="this.parentElement.style.display='none'"
-  class="w3-button w3-blue w3-large w3-display-topright">&times;</span>
-  <h3>Recuerda...</h3>
-  <p>Cada vez que introduces o restas un capital, debe pasar algo similar en la cuenta de activos, para que la cuenta quede balanceada</p>
-</div>
+			<!-- ALERTA CON BOTON DE CERRAR CAPITAL-->
+			<div class="w3-panel w3-blue w3-display-container w3-animate-top" style="display:none; position:fixed; z-index:10; top:0px;" id="alertaCapital">
+				<span onclick="this.parentElement.style.display='none'"
+							class="w3-button w3-blue w3-large w3-display-topright">&times;</span>
+				<h3>Recuerda...</h3>
+				<p>Cada vez que introduces o restas un capital, debe pasar algo similar en la cuenta de activos, para que la cuenta quede balanceada</p>
+			</div>
 
-<!-- ALERTA TOTAL BALANCE-->
-<div class="w3-panel w3-red w3-display-container" style="display:none; position:fixed; z-index:10" id="total">
-  <span onclick="this.parentElement.style.display='none'"
-  class="w3-button w3-red w3-large w3-display-topright" id="cerrartotal">&times;</span>
-  <h3>TOTAL DEL BALANCE GENERAL</h3>
-  <p>Si ves este aviso en verde, significa que están balanceados los activos y pasivos de tu balance general.</p>
-  <p>si lo ves en rojo, vuelve a intentarlo. Te recomendamos tratar de balancear cada vez que introduzcas una cuenta.</p><br/>
-  <p>Por ejemplo: los socios pusieron 1000000 pesos para un terreno, entonces la cuenta de "Capital Social" aumentó en 1000000
-    y la cuenta "Terrrenos", de los "Activos Fijos", aumentó 1000000 también,</p>
-  <p>...de esta manera 1000000 - 1000000 = 0</p>
-  <h2 id="eltotal"></h2>
-</div>
+			<!-- ALERTA TOTAL BALANCE-->
+			<div class="w3-panel w3-red w3-display-container" style="display:none; position:fixed; z-index:10" id="total">
+				<span onclick="this.parentElement.style.display='none'"
+							class="w3-button w3-red w3-large w3-display-topright" id="cerrartotal">&times;</span>
+				<h3>TOTAL DEL BALANCE GENERAL</h3>
+				<p>Si ves este aviso en verde, significa que están balanceados los activos y pasivos de tu balance general.</p>
+				<p>si lo ves en rojo, vuelve a intentarlo. Te recomendamos tratar de balancear cada vez que introduzcas una cuenta.</p><br/>
+				<p>Por ejemplo: los socios pusieron 1000000 pesos para un terreno, entonces la cuenta de "Capital Social" aumentó en 1000000
+					y la cuenta "Terrrenos", de los "Activos Fijos", aumentó 1000000 también,</p>
+				<p>...de esta manera 1000000 - 1000000 = 0</p>
+				<h2 id="eltotal"></h2>
+			</div>
 
-<!--EL BALANCE GENERAL AHORA SI, EN LA CARTA "EMPEZAR" SE LLENA TODOO-->
-<div class="w3-container w3-card-4 w3-animate-top" style="display:none; width:100%;" id="empezar"><br/>
-  <header class="w3-container w3-grey" style="text-align:center"><h3>Llenar formato para "Empresa Emprex S.A."</h3></header>
-  <div class="w3-container w3-light-grey">
-    <br/><h4>Activos</h4>
+			<!--EL BALANCE GENERAL AHORA SI, EN LA CARTA "EMPEZAR" SE LLENA TODOO-->
+			<div class="w3-container w3-card-4 w3-animate-top" style="display:none; width:100%;" id="empezar"><br/>
+				<header class="w3-container w3-grey" style="text-align:center"><h3>Llenar formato para "Empresa Emprex S.A."</h3></header>
+				<div class="w3-container w3-light-grey">
+					<br/><h4>Activos</h4>
 
-    <div class="w3-row-padding">
-      <h5 class="w3-quarter w3-light-grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Activos circulantes</h5>
-      <select class="w3-quarter w3-light-grey" id="select_activo_circulante">
-        <option value=""disabled selected>Seleccione una opción</option>
-        <option value="Caja">Caja</option>
-        <option value="Banco">Banco</option>
-        <option value="Mercaderías">Mercaderías</option>
-        <option value="Letras por Cobrar">Letras por Cobrar</option>
-        <option value="Clientes">Clientes</option>
-        <option value="Deudores Varios">Deudores Varios</option>
-        <option value="Anticipos de impuestos">Anticipos de impuestos</option>
-        <option value="Documentos por cobrar">Documentos por cobrar</option>
-        <option value="Materias primas">Materias primas</option>
-        <option value="Anticipo a proveedores">Anticipo a proveedores</option>
-        <option value="Cuenta particular socios">Cuenta particular socios</option>
-        <option value="Materiales">Materiales</option>
-      </select>
-      <input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="input_circulante">
-      <button class="w3-qarter w3-button w3-teal w3-padding-small" onclick="w3_alertaActivos();fillActivoCirculante();">Agregar</button>
-    </div>
+					<div class="w3-row-padding">
+						<h5 class="w3-quarter w3-light-grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Activos circulantes</h5>
+						<select class="w3-quarter w3-light-grey" id="select_activo_circulante">
+							<option value=""disabled selected>Seleccione una opción</option>
+							<option value="Caja">Caja</option>
+							<option value="Banco">Banco</option>
+							<option value="Mercaderías">Mercaderías</option>
+							<option value="Letras por Cobrar">Letras por Cobrar</option>
+							<option value="Clientes">Clientes</option>
+							<option value="Deudores Varios">Deudores Varios</option>
+							<option value="Anticipos de impuestos">Anticipos de impuestos</option>
+							<option value="Documentos por cobrar">Documentos por cobrar</option>
+							<option value="Materias primas">Materias primas</option>
+							<option value="Anticipo a proveedores">Anticipo a proveedores</option>
+							<option value="Cuenta particular socios">Cuenta particular socios</option>
+							<option value="Materiales">Materiales</option>
+						</select>
+						<input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="input_circulante">
+						<button class="w3-qarter w3-button w3-teal w3-padding-small" onclick="w3_alertaActivos();fillActivoCirculante();">Agregar</button>
+					</div>
 
-    <div class="w3-row-padding">
-      <h5 class="w3-quarter w3-light-grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Activos Fijos</h5>
-      <select class="w3-quarter w3-light-grey" id="select_activo_fijo">
-        <option value=""disabled selected>Seleccione una opción</option>
-        <option value="Máquinas">Máquinas</option>
-        <option value="Equipos">Equipos</option>
-        <option value="Herramientas">Herramientas</option>
-        <option value="Muebles">Muebles</option>
-        <option value="Terrenos">Terrenos</option>
-        <option value="Vehículos">Vehículos</option>
-        <option value="Bienes Raíces">Bienes Raíces</option>
-      </select>
-      <input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="input_fijo">
-      <button class="w3-qarter w3-button w3-teal w3-padding-small" onclick="w3_alertaActivos();fillActivoFijo();">Agregar</button>
-    </div>
+					<div class="w3-row-padding">
+						<h5 class="w3-quarter w3-light-grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Activos Fijos</h5>
+						<select class="w3-quarter w3-light-grey" id="select_activo_fijo">
+							<option value=""disabled selected>Seleccione una opción</option>
+							<option value="Máquinas">Máquinas</option>
+							<option value="Equipos">Equipos</option>
+							<option value="Herramientas">Herramientas</option>
+							<option value="Muebles">Muebles</option>
+							<option value="Terrenos">Terrenos</option>
+							<option value="Vehículos">Vehículos</option>
+							<option value="Bienes Raíces">Bienes Raíces</option>
+						</select>
+						<input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="input_fijo">
+						<button class="w3-qarter w3-button w3-teal w3-padding-small" onclick="w3_alertaActivos();fillActivoFijo();">Agregar</button>
+					</div>
 
-    <div class="w3-row-padding">
-      <h5 class="w3-quarter w3-light-grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Otros Activos</h5>
-      <select class="w3-quarter w3-light-grey" id="select_activo_otros">
-        <option value=""disabled selected>Seleccione una opción</option>
-        <option value="Derecho de Llaves">Derecho de Llaves</option>
-        <option value="Marca Comercial">Marca Comercial</option>
-        <option value="Patente Industrial">Patente Industrial</option>
-      </select>
-      <input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="input_otros">
-      <button class="w3-qarter w3-button w3-teal w3-padding-small" onclick="w3_alertaActivos();fillActivoOtros();">Agregar</button>
-    </div>
+					<div class="w3-row-padding">
+						<h5 class="w3-quarter w3-light-grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Otros Activos</h5>
+						<select class="w3-quarter w3-light-grey" id="select_activo_otros">
+							<option value=""disabled selected>Seleccione una opción</option>
+							<option value="Derecho de Llaves">Derecho de Llaves</option>
+							<option value="Marca Comercial">Marca Comercial</option>
+							<option value="Patente Industrial">Patente Industrial</option>
+						</select>
+						<input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="input_otros">
+						<button class="w3-qarter w3-button w3-teal w3-padding-small" onclick="w3_alertaActivos();fillActivoOtros();">Agregar</button>
+					</div>
 
-    <br/><h4>Pasivos</h4>
+					<br/><h4>Pasivos</h4>
 
-    <div class="w3-row-padding">
-      <h5 class="w3-quarter w3-light-grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pasivos circulantes (corto plazo)</h5>
-      <select class="w3-quarter w3-light-grey" id="select_pasivo_circulante">
-        <option value=""disabled selected>Seleccione una opción</option>
-        <option value="Letras por pagar">Letras por pagar</option>
-        <option value="Proveedores">Proveedores</option>
-        <option value="Préstamos Bancarios">Préstamos Bancarios</option>
-        <option value="Acreedores">Acreedores</option>
-        <option value="Documentos por pagar">Documentos por pagar</option>
-        <option value="Honorarios por pagar">Honorarios por pagar</option>
-        <option value="Impuestos por pagar">Impuestos por pagar</option>
-        <option value="Seguros por pagar">Seguros por pagar</option>
-        <option value="Comisiones por pagar">Comisiones por pagar</option>
-        <option value="Arriendos por pagar">Arriendos por pagar</option>
-        <option value="Isapres por pagar">Isapres por pagar</option>
-        <option value="AFP por pagar">AFP por pagar</option>
-        <option value="Sueldos por pagar">Sueldos por pagar</option>
-        <option value="Cuentas por pagar">Cuentas por pagar</option>
-        <option value="Pagarés por pagar">Pagarés por pagar</option>
-      </select>
-      <input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="input_pasivo">
-      <button class="w3-qarter w3-button w3-teal w3-padding-small" onclick="w3_alertaPasivos();fillPasivoCirculante();">Agregar</button>
-    </div>
+					<div class="w3-row-padding">
+						<h5 class="w3-quarter w3-light-grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pasivos circulantes (corto plazo)</h5>
+						<select class="w3-quarter w3-light-grey" id="select_pasivo_circulante">
+							<option value=""disabled selected>Seleccione una opción</option>
+							<option value="Letras por pagar">Letras por pagar</option>
+							<option value="Proveedores">Proveedores</option>
+							<option value="Préstamos Bancarios">Préstamos Bancarios</option>
+							<option value="Acreedores">Acreedores</option>
+							<option value="Documentos por pagar">Documentos por pagar</option>
+							<option value="Honorarios por pagar">Honorarios por pagar</option>
+							<option value="Impuestos por pagar">Impuestos por pagar</option>
+							<option value="Seguros por pagar">Seguros por pagar</option>
+							<option value="Comisiones por pagar">Comisiones por pagar</option>
+							<option value="Arriendos por pagar">Arriendos por pagar</option>
+							<option value="Isapres por pagar">Isapres por pagar</option>
+							<option value="AFP por pagar">AFP por pagar</option>
+							<option value="Sueldos por pagar">Sueldos por pagar</option>
+							<option value="Cuentas por pagar">Cuentas por pagar</option>
+							<option value="Pagarés por pagar">Pagarés por pagar</option>
+						</select>
+						<input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="input_pasivo">
+						<button class="w3-qarter w3-button w3-teal w3-padding-small" onclick="w3_alertaPasivos();fillPasivoCirculante();">Agregar</button>
+					</div>
 
-    <div class="w3-row-padding">
-      <h5 class="w3-quarter w3-light-grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pasivos a largo plazo</h5>
-      <select class="w3-quarter w3-light-grey" id="select_pasivo_largo">
-        <option value=""disabled selected>Seleccione una opción</option>
-        <option value="Créditos a Largo Plazo">Créditos a Largo Plazo</option>
-        <option value="Créditos Hipotecarios">Créditos Hipotecarios</option>
-      </select>
-      <input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="input_pasivo_largo">
-      <button class="w3-qarter w3-button w3-teal w3-padding-small" onclick="w3_alertaPasivos();fillPasivoLargo();">Agregar</button>
-    </div>
+					<div class="w3-row-padding">
+						<h5 class="w3-quarter w3-light-grey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pasivos a largo plazo</h5>
+						<select class="w3-quarter w3-light-grey" id="select_pasivo_largo">
+							<option value=""disabled selected>Seleccione una opción</option>
+							<option value="Créditos a Largo Plazo">Créditos a Largo Plazo</option>
+							<option value="Créditos Hipotecarios">Créditos Hipotecarios</option>
+						</select>
+						<input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="input_pasivo_largo">
+						<button class="w3-qarter w3-button w3-teal w3-padding-small" onclick="w3_alertaPasivos();fillPasivoLargo();">Agregar</button>
+					</div>
 
-    <br/>
-    <div class="w3-row-padding">
-      <h4 class="w3-quarter w3-light-grey">Capital</h4>
-      <select class="w3-quarter w3-light-grey" id="select_capital_contable">
-        <option value=""disabled selected>Seleccione una opción</option>
-        <option value="Capital Social">Capital Social</option>
-      </select>
-      <input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="input_capital">
-      <button class="w3-qarter w3-button w3-teal w3-padding-small" onclick="w3_alertaCapital();fillCapitalContable();">Agregar</button>
-    </div>
+					<br/>
+					<div class="w3-row-padding">
+						<h4 class="w3-quarter w3-light-grey">Capital</h4>
+						<select class="w3-quarter w3-light-grey" id="select_capital_contable">
+							<option value=""disabled selected>Seleccione una opción</option>
+							<option value="Capital Social">Capital Social</option>
+						</select>
+						<input class="w3-quarter w3-input w3-border" type="text" placeholder="MXN" id="input_capital">
+						<button class="w3-qarter w3-button w3-teal w3-padding-small" onclick="w3_alertaCapital();fillCapitalContable();">Agregar</button>
+					</div>
 
-  </div>
-  <button class="w3-btn w3-block w3-teal" id="Calcular" onclick="calcular()">Calcular! :D</button><br/>
-</div><!--FIN DE LA CARTA "EMPEZAR"-->
-<br/><br/><br/><br/>
+				</div>
+				<button class="w3-btn w3-block w3-teal" id="Calcular" onclick="calcular()">Calcular! :D</button><br/>
+			</div><!--FIN DE LA CARTA "EMPEZAR"-->
+			<br/><br/><br/><br/>
 
-<!--CARTA BORRADOR: Aqui se van agregando las cuentas al borrador-->
-<div class="w3-container w3-card-4 w3-animate-top" style="display:none; width:100%;" id="borrador">
-  <h2 style="text-align:center">Empresa Emprex S.A.</h2>
-  <h3 style="text-align:center">Balance General</h3>
-  <h3 style="text-align:center">Día del mes del año...<h3>
-  <br/>
-  <h3>Activos</h3>
-  <h5>Circulantes</h5>
-  <span id="activos_circulantes"></span>
-  <h5>Fijos</h5>
-  <span id="activos_fijos"></span>
-  <h5>Otros</h5>
-  <span id="activos_otros"></span>
-  <br/>
-  <h3>Pasivos</h3>
-  <h5>Corto Plazo</h5>
-  <span id="pasivos_cortos"></span>
-  <h5>Largo Plazo</h5>
-  <span id="pasivos_largos"></span>
-  <br/>
-  <h3>Capital</h3>
-  <h5>Contable</h5>
-  <span id="capital_contable"></span>
-  <br/>
-</div><br/>
-<button class="w3-btn w3-block w3-teal" onclick="imprimir()" id="imprimir" style="display:none">Imprimir borrador! :D</button>
-<br/>
+			<!--CARTA BORRADOR: Aqui se van agregando las cuentas al borrador-->
+			<div class="w3-container w3-card-4 w3-animate-top" style="display:none; width:100%;" id="borrador">
+				<h2 style="text-align:center">Empresa Emprex S.A.</h2>
+				<h3 style="text-align:center">Balance General</h3>
+				<h3 style="text-align:center">Día del mes del año...<h3>
+					<br/>
+					<h3>Activos</h3>
+					<h5>Circulantes</h5>
+					<span id="activos_circulantes"></span>
+					<h5>Fijos</h5>
+					<span id="activos_fijos"></span>
+					<h5>Otros</h5>
+					<span id="activos_otros"></span>
+					<br/>
+					<h3>Pasivos</h3>
+					<h5>Corto Plazo</h5>
+					<span id="pasivos_cortos"></span>
+					<h5>Largo Plazo</h5>
+					<span id="pasivos_largos"></span>
+					<br/>
+					<h3>Capital</h3>
+					<h5>Contable</h5>
+					<span id="capital_contable"></span>
+					<br/>
+			</div><br/>
+			<button class="w3-btn w3-block w3-teal" onclick="imprimir()" id="imprimir" style="display:none">Imprimir borrador! :D</button>
+			<br/>
 
-<img src="philippepetit.jpg" alt="Finanzas" style="width:100%">
+			<img src="philippepetit.jpg" alt="Finanzas" style="width:100%">
 
-</div>
+		</div>
 
-<script>
-var d=false;//definicion
-var a=false;//activos
-var c=false;//capital
-var p=false;//pasivos
-var b=false;//barra de menucito
-var e=false;//empezar
-var activoslist = [];//lista de activos
+		<script>
+		 var d=false;//definicion
+		 var a=false;//activos
+		 var c=false;//capital
+		 var p=false;//pasivos
+		 var b=false;//barra de menucito
+		 var e=false;//empezar
+		 var activoslist = [];//lista de activos
 
-function w3_openClose(){//funcion que abre y cierra el menucito
-  if(b == false){
-  b = true;
-  var element = document.getElementById("menucito");
-  element.innerHTML = "&#9746;";
-  document.getElementById("main").style.marginLeft = "25%";
-  document.getElementById("mySidebar").style.width = "25%";
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("openNav").style.display = 'none';}
-  else{
-    b = false;
-    var element = document.getElementById("menucito");
-    element.innerHTML = "&#9776;";
-    document.getElementById("main").style.marginLeft = "0%";
-    document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("openNav").style.display = "inline-block";
-  }
-}
-function w3_abrirDefinicion(){
-  if (e==true){
-    e=false;
-    document.getElementById("empezar").style.display = "none";
-    document.getElementById("borrador").style.display = "none";
-    document.getElementById("imprimir").style.display = "none";}
-  if (a==true){
-    a=false;
-    document.getElementById("activos").style.display = "none";}
-  if (p==true){
-    p=false;
-    document.getElementById("pasivos").style.display = "none";}
-  if (c==true){
-    c=false;
-    document.getElementById("capital").style.display = "none";}
-  d=true;
-  document.getElementById("definicion").style.display = "inline-block";
-}
-function w3_abrirActivos(){
-  if (e==true){
-    e=false;
-    document.getElementById("empezar").style.display = "none";
-    document.getElementById("borrador").style.display = "none";
-    document.getElementById("imprimir").style.display = "none";}
-  if (d==true){
-    d=false;
-    document.getElementById("definicion").style.display = "none";}
-  if (p==true){
-    p=false;
-    document.getElementById("pasivos").style.display = "none";}
-  if (c==true){
-    c=false;
-    document.getElementById("capital").style.display = "none";}
-  a=true;
-  document.getElementById("activos").style.display = "inline-block";
-}
-function w3_abrirPasivos(){
-  if (e==true){
-    e=false;
-    document.getElementById("empezar").style.display = "none";
-    document.getElementById("borrador").style.display = "none";
-    document.getElementById("imprimir").style.display = "none";}
-  if (a==true){
-    a=false;
-    document.getElementById("activos").style.display = "none";}
-  if (d==true){
-    d=false;
-    document.getElementById("definicion").style.display = "none";}
-  if (c==true){
-    c=false;
-    document.getElementById("capital").style.display = "none";}
-  p=true;
-  document.getElementById("pasivos").style.display = "inline-block";
-}
-function w3_abrirCapital(){
-  if (e==true){
-    e=false;
-    document.getElementById("empezar").style.display = "none";
-    document.getElementById("borrador").style.display = "none";
-    document.getElementById("imprimir").style.display = "none";}
-  if (a==true){
-    a=false;
-    document.getElementById("activos").style.display = "none";}
-  if (p==true){
-    p=false;
-    document.getElementById("pasivos").style.display = "none";}
-  if (d==true){
-    d=false;
-    document.getElementById("definicion").style.display = "none";}
-  c=true;
-  document.getElementById("capital").style.display = "inline-block";
-}
-function w3_empezar(){
-  if (a==true){
-    a=false;
-    document.getElementById("activos").style.display = "none";}
-  if (p==true){
-    p=false;
-    document.getElementById("pasivos").style.display = "none";}
-  if (d==true){
-    d=false;
-    document.getElementById("definicion").style.display = "none";}
-  if (c==true){
-    c=false;
-    document.getElementById("capital").style.display = "none";}
-  e=true;
-  document.getElementById("empezar").style.display="inline-block";
-  document.getElementById("borrador").style.display="inline-block";
-  document.getElementById("imprimir").style.display="inline-block";
-}
+		 function w3_openClose(){//funcion que abre y cierra el menucito
+				 if(b == false){
+						 b = true;
+						 var element = document.getElementById("menucito");
+						 element.innerHTML = "&#9746;";
+						 document.getElementById("main").style.marginLeft = "25%";
+						 document.getElementById("mySidebar").style.width = "25%";
+						 document.getElementById("mySidebar").style.display = "block";
+						 document.getElementById("openNav").style.display = 'none';}
+				 else{
+						 b = false;
+						 var element = document.getElementById("menucito");
+						 element.innerHTML = "&#9776;";
+						 document.getElementById("main").style.marginLeft = "0%";
+						 document.getElementById("mySidebar").style.display = "none";
+						 document.getElementById("openNav").style.display = "inline-block";
+				 }
+		 }
+		 function w3_abrirDefinicion(){
+				 if (e==true){
+						 e=false;
+						 document.getElementById("empezar").style.display = "none";
+						 document.getElementById("borrador").style.display = "none";
+						 document.getElementById("imprimir").style.display = "none";}
+				 if (a==true){
+						 a=false;
+						 document.getElementById("activos").style.display = "none";}
+				 if (p==true){
+						 p=false;
+						 document.getElementById("pasivos").style.display = "none";}
+				 if (c==true){
+						 c=false;
+						 document.getElementById("capital").style.display = "none";}
+				 d=true;
+				 document.getElementById("definicion").style.display = "inline-block";
+		 }
+		 function w3_abrirActivos(){
+				 if (e==true){
+						 e=false;
+						 document.getElementById("empezar").style.display = "none";
+						 document.getElementById("borrador").style.display = "none";
+						 document.getElementById("imprimir").style.display = "none";}
+				 if (d==true){
+						 d=false;
+						 document.getElementById("definicion").style.display = "none";}
+				 if (p==true){
+						 p=false;
+						 document.getElementById("pasivos").style.display = "none";}
+				 if (c==true){
+						 c=false;
+						 document.getElementById("capital").style.display = "none";}
+				 a=true;
+				 document.getElementById("activos").style.display = "inline-block";
+		 }
+		 function w3_abrirPasivos(){
+				 if (e==true){
+						 e=false;
+						 document.getElementById("empezar").style.display = "none";
+						 document.getElementById("borrador").style.display = "none";
+						 document.getElementById("imprimir").style.display = "none";}
+				 if (a==true){
+						 a=false;
+						 document.getElementById("activos").style.display = "none";}
+				 if (d==true){
+						 d=false;
+						 document.getElementById("definicion").style.display = "none";}
+				 if (c==true){
+						 c=false;
+						 document.getElementById("capital").style.display = "none";}
+				 p=true;
+				 document.getElementById("pasivos").style.display = "inline-block";
+		 }
+		 function w3_abrirCapital(){
+				 if (e==true){
+						 e=false;
+						 document.getElementById("empezar").style.display = "none";
+						 document.getElementById("borrador").style.display = "none";
+						 document.getElementById("imprimir").style.display = "none";}
+				 if (a==true){
+						 a=false;
+						 document.getElementById("activos").style.display = "none";}
+				 if (p==true){
+						 p=false;
+						 document.getElementById("pasivos").style.display = "none";}
+				 if (d==true){
+						 d=false;
+						 document.getElementById("definicion").style.display = "none";}
+				 c=true;
+				 document.getElementById("capital").style.display = "inline-block";
+		 }
+		 function w3_empezar(){
+				 if (a==true){
+						 a=false;
+						 document.getElementById("activos").style.display = "none";}
+				 if (p==true){
+						 p=false;
+						 document.getElementById("pasivos").style.display = "none";}
+				 if (d==true){
+						 d=false;
+						 document.getElementById("definicion").style.display = "none";}
+				 if (c==true){
+						 c=false;
+						 document.getElementById("capital").style.display = "none";}
+				 e=true;
+				 document.getElementById("empezar").style.display="inline-block";
+				 document.getElementById("borrador").style.display="inline-block";
+				 document.getElementById("imprimir").style.display="inline-block";
+		 }
 
-function w3_alertaActivos(){
-  document.getElementById("alertaActivos").style.display="inline-block";
-}
+		 function w3_alertaActivos(){
+				 document.getElementById("alertaActivos").style.display="inline-block";
+		 }
 
-function w3_alertaPasivos(){
-  document.getElementById("alertaPasivos").style.display="inline-block";
-}
+		 function w3_alertaPasivos(){
+				 document.getElementById("alertaPasivos").style.display="inline-block";
+		 }
 
-function w3_alertaCapital(){
-  document.getElementById("alertaCapital").style.display="inline-block";
-}
-//Llena la tarjeta en los activos circulantes
-function fillActivoCirculante(){
-  selectedcosa = document.getElementById("select_activo_circulante");
-  selectedopt = selectedcosa.options[selectedcosa.selectedIndex].text;
-  inputcosa = document.getElementById("input_circulante").value;
+		 function w3_alertaCapital(){
+				 document.getElementById("alertaCapital").style.display="inline-block";
+		 }
+		 //Llena la tarjeta en los activos circulantes
+		 function fillActivoCirculante(){
+				 selectedcosa = document.getElementById("select_activo_circulante");
+				 selectedopt = selectedcosa.options[selectedcosa.selectedIndex].text;
+				 inputcosa = document.getElementById("input_circulante").value;
 
-  var node = document.createElement("p");
-  var textnode = document.createTextNode(selectedopt+": "+inputcosa);
-  node.style.paddingLeft = "20px";
+				 var node = document.createElement("p");
+				 var textnode = document.createTextNode(selectedopt+": "+inputcosa);
+				 node.style.paddingLeft = "20px";
 
-  activoslist.push(parseInt(inputcosa));
+				 activoslist.push(parseInt(inputcosa));
 
-  console.log(activoslist);
+				 console.log(activoslist);
 
-  node.appendChild(textnode);
-  document.getElementById("activos_circulantes").appendChild(node);
-}
-//LLena la tarjeta en los activos fijos
-function fillActivoFijo(){
-  selectedcosa = document.getElementById("select_activo_fijo");
-  selectedopt = selectedcosa.options[selectedcosa.selectedIndex].text;
-  inputcosa = document.getElementById("input_fijo").value;
+				 node.appendChild(textnode);
+				 document.getElementById("activos_circulantes").appendChild(node);
+		 }
+		 //LLena la tarjeta en los activos fijos
+		 function fillActivoFijo(){
+				 selectedcosa = document.getElementById("select_activo_fijo");
+				 selectedopt = selectedcosa.options[selectedcosa.selectedIndex].text;
+				 inputcosa = document.getElementById("input_fijo").value;
 
-  var node = document.createElement("p");
-  var textnode = document.createTextNode(selectedopt+": "+inputcosa);
-  node.style.paddingLeft = "20px";
+				 var node = document.createElement("p");
+				 var textnode = document.createTextNode(selectedopt+": "+inputcosa);
+				 node.style.paddingLeft = "20px";
 
-  activoslist.push(parseInt(inputcosa));
+				 activoslist.push(parseInt(inputcosa));
 
-  console.log(activoslist);
+				 console.log(activoslist);
 
-  node.appendChild(textnode);
-  document.getElementById("activos_fijos").appendChild(node);
-}
-//LLena la tarjeta en los activos fijos
-function fillActivoOtros(){
-  selectedcosa = document.getElementById("select_activo_otros");
-  selectedopt = selectedcosa.options[selectedcosa.selectedIndex].text;
-  inputcosa = document.getElementById("input_otros").value;
+				 node.appendChild(textnode);
+				 document.getElementById("activos_fijos").appendChild(node);
+		 }
+		 //LLena la tarjeta en los activos fijos
+		 function fillActivoOtros(){
+				 selectedcosa = document.getElementById("select_activo_otros");
+				 selectedopt = selectedcosa.options[selectedcosa.selectedIndex].text;
+				 inputcosa = document.getElementById("input_otros").value;
 
-  var node = document.createElement("p");
-  var textnode = document.createTextNode(selectedopt+": "+inputcosa);
-  node.style.paddingLeft = "20px";
+				 var node = document.createElement("p");
+				 var textnode = document.createTextNode(selectedopt+": "+inputcosa);
+				 node.style.paddingLeft = "20px";
 
-  activoslist.push(parseInt(inputcosa));
+				 activoslist.push(parseInt(inputcosa));
 
-  console.log(activoslist);
+				 console.log(activoslist);
 
-  node.appendChild(textnode);
-  document.getElementById("activos_otros").appendChild(node);
-}
+				 node.appendChild(textnode);
+				 document.getElementById("activos_otros").appendChild(node);
+		 }
 
-function fillPasivoCirculante(){
-  selectedcosa = document.getElementById("select_pasivo_circulante");
-  selectedopt = selectedcosa.options[selectedcosa.selectedIndex].text;
-  inputcosa = "-"+document.getElementById("input_pasivo").value;
+		 function fillPasivoCirculante(){
+				 selectedcosa = document.getElementById("select_pasivo_circulante");
+				 selectedopt = selectedcosa.options[selectedcosa.selectedIndex].text;
+				 inputcosa = "-"+document.getElementById("input_pasivo").value;
 
-  var node = document.createElement("p");
-  var textnode = document.createTextNode(selectedopt+": "+inputcosa);
-  node.style.paddingLeft = "20px";
+				 var node = document.createElement("p");
+				 var textnode = document.createTextNode(selectedopt+": "+inputcosa);
+				 node.style.paddingLeft = "20px";
 
-  activoslist.push(parseInt(inputcosa));
+				 activoslist.push(parseInt(inputcosa));
 
-  console.log(activoslist);
+				 console.log(activoslist);
 
-  node.appendChild(textnode);
-  document.getElementById("pasivos_cortos").appendChild(node);
-}
+				 node.appendChild(textnode);
+				 document.getElementById("pasivos_cortos").appendChild(node);
+		 }
 
-function fillPasivoLargo(){
-  selectedcosa = document.getElementById("select_pasivo_largo");
-  selectedopt = selectedcosa.options[selectedcosa.selectedIndex].text;
-  inputcosa = "-"+document.getElementById("input_pasivo_largo").value;
+		 function fillPasivoLargo(){
+				 selectedcosa = document.getElementById("select_pasivo_largo");
+				 selectedopt = selectedcosa.options[selectedcosa.selectedIndex].text;
+				 inputcosa = "-"+document.getElementById("input_pasivo_largo").value;
 
-  var node = document.createElement("p");
-  var textnode = document.createTextNode(selectedopt+": "+inputcosa);
-  node.style.paddingLeft = "20px";
+				 var node = document.createElement("p");
+				 var textnode = document.createTextNode(selectedopt+": "+inputcosa);
+				 node.style.paddingLeft = "20px";
 
-  activoslist.push(parseInt(inputcosa));
+				 activoslist.push(parseInt(inputcosa));
 
-  console.log(activoslist);
+				 console.log(activoslist);
 
-  node.appendChild(textnode);
-  document.getElementById("pasivos_largos").appendChild(node);
-}
+				 node.appendChild(textnode);
+				 document.getElementById("pasivos_largos").appendChild(node);
+		 }
 
-function fillCapitalContable(){
-  selectedcosa = document.getElementById("select_capital_contable");
-  selectedopt = selectedcosa.options[selectedcosa.selectedIndex].text;
-  inputcosa = "-"+document.getElementById("input_capital").value;
+		 function fillCapitalContable(){
+				 selectedcosa = document.getElementById("select_capital_contable");
+				 selectedopt = selectedcosa.options[selectedcosa.selectedIndex].text;
+				 inputcosa = "-"+document.getElementById("input_capital").value;
 
-  var node = document.createElement("p");
-  var textnode = document.createTextNode(selectedopt+": "+inputcosa);
-  node.style.paddingLeft = "20px";
+				 var node = document.createElement("p");
+				 var textnode = document.createTextNode(selectedopt+": "+inputcosa);
+				 node.style.paddingLeft = "20px";
 
-  activoslist.push(parseInt(inputcosa));
+				 activoslist.push(parseInt(inputcosa));
 
-  console.log(activoslist);
+				 console.log(activoslist);
 
-  node.appendChild(textnode);
-  document.getElementById("capital_contable").appendChild(node);
-}
+				 node.appendChild(textnode);
+				 document.getElementById("capital_contable").appendChild(node);
+		 }
 
-function calcular(){
-var total=0;
-  for (var i=0; i<activoslist.length; i++) {
-    total=total+activoslist[i];}
-  console.log(total);
-  document.getElementById("total").style.display="inline-block";
-  if(total==0) {
-    document.getElementById("total").classList.remove("w3-red");
-    document.getElementById("total").classList.add("w3-green");
-    document.getElementById("cerrartotal").classList.remove("w3-red");
-    document.getElementById("cerrartotal").classList.add("w3-green");
-    total="<pre>Total:    $ "+total+" MXN     Tu cuenta está balanceada</pre>";
-  }
-  else {
-    document.getElementById("total").classList.remove("w3-green");
-    document.getElementById("total").classList.add("w3-red");
-    document.getElementById("cerrartotal").classList.remove("w3-green");
-    document.getElementById("cerrartotal").classList.add("w3-red");
-    total="<pre>Total:    $ "+total+" MXN     Tu cuenta no está balanceada</pre>";
-  }
-  document.getElementById("eltotal").innerHTML = total;
-}
+		 function calcular(){
+				 var total=0;
+				 for (var i=0; i<activoslist.length; i++) {
+						 total=total+activoslist[i];}
+				 console.log(total);
+				 document.getElementById("total").style.display="inline-block";
+				 if(total==0) {
+						 document.getElementById("total").classList.remove("w3-red");
+						 document.getElementById("total").classList.add("w3-green");
+						 document.getElementById("cerrartotal").classList.remove("w3-red");
+						 document.getElementById("cerrartotal").classList.add("w3-green");
+						 total="<pre>Total:    $ "+total+" MXN     Tu cuenta está balanceada</pre>";
+				 }
+				 else {
+						 document.getElementById("total").classList.remove("w3-green");
+						 document.getElementById("total").classList.add("w3-red");
+						 document.getElementById("cerrartotal").classList.remove("w3-green");
+						 document.getElementById("cerrartotal").classList.add("w3-red");
+						 total="<pre>Total:    $ "+total+" MXN     Tu cuenta no está balanceada</pre>";
+				 }
+				 document.getElementById("eltotal").innerHTML = total;
+		 }
 
-function imprimir(){
-}
+		 function imprimir(){
 
-</script>
+				 var doc = new jsPDF();          
+				 var elementHandler = {
+						 '#ignorePDF': function (element, renderer) {
+								 return true;
+						 }
+				 };
+				 var source = document.getElementById("borrador").innerHTML;
+				 doc.fromHTML(
+						 source,
+						 15,
+						 15,
+						 {
+								 'width': 180,'elementHandlers': elementHandler
+						 });
 
-</body>
+				 doc.output("dataurlnewwindow");
+				 
+		 }
+
+		</script>
+
+	</body>
 </html>

@@ -605,161 +605,246 @@
 </div>
 
 <script>
-var CF2=0;
-var UPV2=0;
-var PVU2=0;
-var CV2=0;
-var b = false;
-var CVU=0;
-var PE=0;
-function w3_openClose(){
-  if(b == false){
-  b = true;
-  var element = document.getElementById("menucito");
-  element.innerHTML = "&#9746;";
-  document.getElementById("main").style.marginLeft = "25%";
-  document.getElementById("mySidebar").style.width = "25%";
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("openNav").style.display = 'none';}
-  else{
-    b = false;
-    var element = document.getElementById("menucito");
-    element.innerHTML = "&#9776;";
-    document.getElementById("main").style.marginLeft = "0%";
-    document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("openNav").style.display = "inline-block";
-  }
-}
+ var CF2=0;
+ var UPV2=0;
+ var PVU2=0;
+ var CV2=0;
+ var b = false;
+ var CVU=0;
+ var PE=0;
+ function w3_openClose(){
+		 if(b == false){
+				 b = true;
+				 var element = document.getElementById("menucito");
+				 element.innerHTML = "&#9746;";
+				 document.getElementById("main").style.marginLeft = "25%";
+				 document.getElementById("mySidebar").style.width = "25%";
+				 document.getElementById("mySidebar").style.display = "block";
+				 document.getElementById("openNav").style.display = 'none';}
+		 else{
+				 b = false;
+				 var element = document.getElementById("menucito");
+				 element.innerHTML = "&#9776;";
+				 document.getElementById("main").style.marginLeft = "0%";
+				 document.getElementById("mySidebar").style.display = "none";
+				 document.getElementById("openNav").style.display = "inline-block";
+		 }
+ }
 
-function pasos(){
-  document.getElementById("empezar").style.display = "none";
-  document.getElementById("definicionP").style.display = "none";
-  document.getElementById("costos").style.display = "none";
-  document.getElementById("costosFijos").style.display = "none";
-  document.getElementById("costosVariables").style.display = "none";
-  document.getElementById("costoUnitario").style.display = "none";
-  document.getElementById("formula").style.display = "none";
-  document.getElementById("pasos").style.display = "inline-block";
-}
+ function pasos(){
+		 document.getElementById("empezar").style.display = "none";
+		 document.getElementById("definicionP").style.display = "none";
+		 document.getElementById("costos").style.display = "none";
+		 document.getElementById("costosFijos").style.display = "none";
+		 document.getElementById("costosVariables").style.display = "none";
+		 document.getElementById("costoUnitario").style.display = "none";
+		 document.getElementById("formula").style.display = "none";
+		 document.getElementById("pasos").style.display = "inline-block";
+ }
 
-function definicionP(){
-  document.getElementById("empezar").style.display = "none";
-  document.getElementById("pasos").style.display = "none";
-  document.getElementById("costos").style.display = "none";
-  document.getElementById("costosFijos").style.display = "none";
-  document.getElementById("costosVariables").style.display = "none";
-  document.getElementById("costoUnitario").style.display = "none";
-  document.getElementById("formula").style.display = "none";
-  document.getElementById("definicionP").style.display = "inline-block";
-}
-
-
-function costos(){
-  document.getElementById("empezar").style.display = "none";
-  document.getElementById("pasos").style.display = "none";
-  document.getElementById("definicionP").style.display = "none";
-  document.getElementById("costosFijos").style.display = "none";
-  document.getElementById("costosVariables").style.display = "none";
-  document.getElementById("costoUnitario").style.display = "none";
-  document.getElementById("formula").style.display = "none";
-  document.getElementById("costos").style.display = "inline-block";
-}
-
-function costosVariables(){
-  document.getElementById("empezar").style.display = "none";
-  document.getElementById("pasos").style.display = "none";
-  document.getElementById("costos").style.display = "none";
-  document.getElementById("costosFijos").style.display = "none";
-  document.getElementById("definicionP").style.display = "none";
-  document.getElementById("costoUnitario").style.display = "none";
-  document.getElementById("formula").style.display = "none";
-  document.getElementById("costosVariables").style.display = "inline-block";
-}
-
-function costosFijos(){
-  document.getElementById("empezar").style.display = "none";
-  document.getElementById("pasos").style.display = "none";
-  document.getElementById("costos").style.display = "none";
-  document.getElementById("definicionP").style.display = "none";
-  document.getElementById("costosVariables").style.display = "none";
-  document.getElementById("costoUnitario").style.display = "none";
-  document.getElementById("formula").style.display = "none";
-  document.getElementById("costosFijos").style.display = "inline-block";
-}
-
-function costoUnitario(){
-  document.getElementById("empezar").style.display = "none";
-  document.getElementById("pasos").style.display = "none";
-  document.getElementById("costos").style.display = "none";
-  document.getElementById("costosFijos").style.display = "none";
-  document.getElementById("costosVariables").style.display = "none";
-  document.getElementById("definicionP").style.display = "none";
-  document.getElementById("formula").style.display = "none";
-  document.getElementById("costoUnitario").style.display = "inline-block";
-}
-
-function formula(){
-  document.getElementById("empezar").style.display = "none";
-  document.getElementById("pasos").style.display = "none";
-  document.getElementById("costos").style.display = "none";
-  document.getElementById("costosFijos").style.display = "none";
-  document.getElementById("costosVariables").style.display = "none";
-  document.getElementById("costoUnitario").style.display = "none";
-  document.getElementById("definicionP").style.display = "none";
-  document.getElementById("formula").style.display = "inline-block";
-}
-
-function Empezar(){
-  document.getElementById("pasos").style.display = "none";
-  document.getElementById("costos").style.display = "none";
-  document.getElementById("costosFijos").style.display = "none";
-  document.getElementById("costosVariables").style.display = "none";
-  document.getElementById("costoUnitario").style.display = "none";
-  document.getElementById("definicionP").style.display = "none";
-  document.getElementById("formula").style.display = "none";
-  document.getElementById("empezar").style.display = "inline-block";
-}
-
-function CF(){
-  var CF=parseInt(document.getElementById("CF").value);
-  if(CF!=null){
-    CF2=CF2+CF;
-    document.getElementById("CF2").value=CF2;
-    document.getElementById("CF").value="";}
-}
-
-function CV(){
-  var CV=parseInt(document.getElementById("CV").value);
-  if(CV!=null){
-    CV2=CV2+CV;
-    document.getElementById("CV2").value=CV2;
-    document.getElementById("CV").value="";}
-}
-
-function PVU(){
-  var PVU=parseInt(document.getElementById("PVU").value);
-  if(PVU!=null){
-    PVU2=PVU2+PVU;
-    document.getElementById("PVU2").value=PVU2;
-    document.getElementById("PVU").value="";}
-}
-function UPV(){
-  var UPV=parseInt(document.getElementById("UPV").value);
-  if(UPV!=null){
-    UPV2=UPV2+UPV;
-    document.getElementById("UPV2").value=UPV2;
-    document.getElementById("UPV").value="";}
-}
-
-function kalcular(){
-  CVU=CV2/PVU2;
-  PE=CF2/(PVU2-CVU);
-  console.log(PE);
-}
+ function definicionP(){
+		 document.getElementById("empezar").style.display = "none";
+		 document.getElementById("pasos").style.display = "none";
+		 document.getElementById("costos").style.display = "none";
+		 document.getElementById("costosFijos").style.display = "none";
+		 document.getElementById("costosVariables").style.display = "none";
+		 document.getElementById("costoUnitario").style.display = "none";
+		 document.getElementById("formula").style.display = "none";
+		 document.getElementById("definicionP").style.display = "inline-block";
+ }
 
 
+ function costos(){
+		 document.getElementById("empezar").style.display = "none";
+		 document.getElementById("pasos").style.display = "none";
+		 document.getElementById("definicionP").style.display = "none";
+		 document.getElementById("costosFijos").style.display = "none";
+		 document.getElementById("costosVariables").style.display = "none";
+		 document.getElementById("costoUnitario").style.display = "none";
+		 document.getElementById("formula").style.display = "none";
+		 document.getElementById("costos").style.display = "inline-block";
+ }
+
+ function costosVariables(){
+		 document.getElementById("empezar").style.display = "none";
+		 document.getElementById("pasos").style.display = "none";
+		 document.getElementById("costos").style.display = "none";
+		 document.getElementById("costosFijos").style.display = "none";
+		 document.getElementById("definicionP").style.display = "none";
+		 document.getElementById("costoUnitario").style.display = "none";
+		 document.getElementById("formula").style.display = "none";
+		 document.getElementById("costosVariables").style.display = "inline-block";
+ }
+
+ function costosFijos(){
+		 document.getElementById("empezar").style.display = "none";
+		 document.getElementById("pasos").style.display = "none";
+		 document.getElementById("costos").style.display = "none";
+		 document.getElementById("definicionP").style.display = "none";
+		 document.getElementById("costosVariables").style.display = "none";
+		 document.getElementById("costoUnitario").style.display = "none";
+		 document.getElementById("formula").style.display = "none";
+		 document.getElementById("costosFijos").style.display = "inline-block";
+ }
+
+ function costoUnitario(){
+		 document.getElementById("empezar").style.display = "none";
+		 document.getElementById("pasos").style.display = "none";
+		 document.getElementById("costos").style.display = "none";
+		 document.getElementById("costosFijos").style.display = "none";
+		 document.getElementById("costosVariables").style.display = "none";
+		 document.getElementById("definicionP").style.display = "none";
+		 document.getElementById("formula").style.display = "none";
+		 document.getElementById("costoUnitario").style.display = "inline-block";
+ }
+
+ function formula(){
+		 document.getElementById("empezar").style.display = "none";
+		 document.getElementById("pasos").style.display = "none";
+		 document.getElementById("costos").style.display = "none";
+		 document.getElementById("costosFijos").style.display = "none";
+		 document.getElementById("costosVariables").style.display = "none";
+		 document.getElementById("costoUnitario").style.display = "none";
+		 document.getElementById("definicionP").style.display = "none";
+		 document.getElementById("formula").style.display = "inline-block";
+ }
+
+ function Empezar(){
+		 document.getElementById("pasos").style.display = "none";
+		 document.getElementById("costos").style.display = "none";
+		 document.getElementById("costosFijos").style.display = "none";
+		 document.getElementById("costosVariables").style.display = "none";
+		 document.getElementById("costoUnitario").style.display = "none";
+		 document.getElementById("definicionP").style.display = "none";
+		 document.getElementById("formula").style.display = "none";
+		 document.getElementById("empezar").style.display = "inline-block";
+ }
+
+ function CF(){
+		 var CF=parseInt(document.getElementById("CF").value);
+		 if(CF!=null){
+				 CF2=CF2+CF;
+				 document.getElementById("CF2").value=CF2;
+				 document.getElementById("CF").value="";}
+ }
+
+ function CV(){
+		 var CV=parseInt(document.getElementById("CV").value);
+		 if(CV!=null){
+				 CV2=CV2+CV;
+				 document.getElementById("CV2").value=CV2;
+				 document.getElementById("CV").value="";}
+ }
+
+ function PVU(){
+		 var PVU=parseInt(document.getElementById("PVU").value);
+		 if(PVU!=null){
+				 PVU2=PVU2+PVU;
+				 document.getElementById("PVU2").value=PVU2;
+				 document.getElementById("PVU").value="";}
+ }
+ function UPV(){
+		 var UPV=parseInt(document.getElementById("UPV").value);
+		 if(UPV!=null){
+				 UPV2=UPV2+UPV;
+				 document.getElementById("UPV2").value=UPV2;
+				 document.getElementById("UPV").value="";}
+ }
+
+ function kalcular(){
+		 CVU=CV2/PVU2;
+		 PE=CF2/(PVU2-CVU);
+		 console.log(PE);
+ }
+ function createChart() {
+
+		 var costofijo = parseInt(document.getElementById('CF2').value);
+		 var ventaunitaria = parseInt(document.getElementById('PVU2').value);
+		 var unidades = parseInt(document.getElementById('UPV2').value);
+		 var costovariable = parseInt(document.getElementById('CV2').value);
+		 var costototal = costofijo+costovariable;
+		 var costounitario = costovariable/unidades;
+		 var equi = (costofijo/(ventaunitaria - costounitario));
+		 document.getElementById('borrador').style.display = "block";
+		 console.log(Math.round(equi * 100) / 100);
+		 var ctx = document.getElementById("myChart").getContext('2d');
+
+		 var resultado = "Tu punto de equilibrio se encuentra en "+equi+" unidad(es), a "+(ventaunitaria*equi)+" UM (Unidad Monetaria).";
+
+		 document.getElementById('resultado').innerHTML = resultado;
+		 
+		 var myChart = new Chart(ctx, {
+				 type: 'line',
+				 data: {
+						 labels: ["0", document.getElementById('UPV2').value],
+						 datasets: [{
+								 label: '# Costo Fijo',
+								 data: [costofijo,costofijo],
+
+								 backgroundColor: [
+										 'rgba(255, 99, 132, 0)'
+								 ],
+								 borderColor: [
+										 'rgba(255,99,132,1)'
+								 ],
+								 borderWidth: 3
+						 },{
+								 label: '# Costo Variable',
+								 data: [0,costovariable],
+								 backgroundColor: [
+										 'rgba(115, 80, 192, 0)'
+								 ],
+								 borderColor: [
+										 'rgba(115, 80, 192, 1)'
+								 ],
+								 borderWidth: 3
+						 },{
+								 label: '# Costo Total',
+								 data: [costofijo,costototal],
+								 backgroundColor: [
+										 'rgba(100, 255, 78, 0)'
+								 ],
+								 borderColor: [
+										 'rgba(54, 162, 235, 1)'
+								 ],
+								 borderWidth: 3
+						 },{
+								 label: '# Utilidad de Venta',
+								 data: [0,ventaunitaria*unidades],
+								 backgroundColor: [
+										 'rgba(100, 255, 78, 0)'
+								 ],
+								 borderColor: [
+										 'rgba(154, 162, 235, 1)'
+								 ],
+								 borderWidth: 3
+						 }]
+				 },
+				 options: {
+						 tooltips: {
+								 intersect:'true'
+						 },
+						 scales: {
+								 yAxes: [{
+										 scaleLabel: {
+												 display: true,
+												 labelString: 'Precio (UM)'
+										 },
+										 ticks: {
+												 beginAtZero:true
+										 }
+								 }],
+								 xAxes: [{
+										 scaleLabel: {
+												 display: true,
+												 labelString: 'Volumen de producción'
+										 }
+								 }],
+						 }
+				 }
+		 });
+ }
 </script>
 
 </body>
->>>>>>> 1c6d90dbd84e2f63a96770dac03f140e152a8bfe
 </html>
